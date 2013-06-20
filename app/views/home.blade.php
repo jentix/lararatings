@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-	<table class="table table-hover">
+	<table class="table table-hover main-table">
 		<thead>
 			<tr>
 				<th>#</th>
@@ -19,7 +19,12 @@
 			@foreach ($ratings as $rating)
 				<tr>
 					<td> {{ $rating->id }} </td>
-					<td> <a href="{{ $rating->link }}"> {{ $rating->name }} </a> </td>
+					<td> 
+						<a href="{{ $rating->link }}"> {{ $rating->name }} </a>
+						@if ($rating->description)
+							<p class="grey">{{ $rating->description }}</p> 
+						@endif 
+					</td>
 					<td></td>
 					<td> {{ $rating->date }} </td>
 				</tr>

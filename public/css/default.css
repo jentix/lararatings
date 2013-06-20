@@ -18,6 +18,7 @@ fieldset {
 textarea {
     resize: vertical;
 }
+.grey { color: #777777; }
 
 /* author's style */
 
@@ -25,4 +26,13 @@ header {
     width: 100%;
     height: 100px;
     background-color: #FFCFAD;
+}
+
+.main-table a {
+    font-size: 12pt;
+    color: #3651BC;
+}
+
+.main-table a:hover {
+    color: #7295D6;
 }
