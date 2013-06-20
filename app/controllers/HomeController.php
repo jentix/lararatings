@@ -6,8 +6,12 @@ class HomeController extends BaseController {
 
 	public function showHome()
 	{
-		// return View::make('home');
-		$this->layout->content = View::make('home');
+		
+		$ratings = DB::table('sites')->get();
+
+		// var_export($ratings);
+		
+		$this->layout->content = View::make('home', array('ratings' => $ratings));
 	}
 
 }
