@@ -6,7 +6,24 @@
 @stop
 
 @section('content')
-	@foreach ($ratings as $rating)
-		<p>Имя: {{ $rating->name }} дата: {{ $rating->date }}</p>
-	@endforeach
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Сайт</th>
+				<th>Просмотров</th>
+				<th>Добавлен</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach ($ratings as $rating)
+				<tr>
+					<td> {{ $rating->id }} </td>
+					<td> <a href="{{ $rating->link }}"> {{ $rating->name }} </a> </td>
+					<td></td>
+					<td> {{ $rating->date }} </td>
+				</tr>
+			@endforeach
+		</tbody>
+	</table>
 @stop

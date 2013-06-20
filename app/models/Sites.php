@@ -2,6 +2,4 @@
 
 class Sites extends Eloquent {
 
-    
-
 }

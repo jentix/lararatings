@@ -9,7 +9,10 @@ class HomeController extends BaseController {
 
 		$ratings = Sites::all();
 
-		// var_export($ratings);
+		// convert dates from timestamp
+		foreach ($ratings as $rating) {
+			$rating->date = date("d.m.Y" , $rating->date);
+		}
 		
 		$this->layout->content = View::make('home', array('ratings' => $ratings));
 	}
