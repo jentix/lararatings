@@ -13,10 +13,11 @@
 	<link href="css/bootstrap/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	@yield('content')
-
+	<div class="container"> 
+		@yield('content')
+	</div>
 	<!-- jQuery -->
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="js/jquery-1.10.1.min.js"></script>
 	<!-- bootstrap js -->
 	<script src="js/bootstrap.min.js"></script>
 </body>
