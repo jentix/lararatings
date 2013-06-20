@@ -1,0 +1,28 @@
+/* default settings */
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+img {
+    vertical-align: middle;
+}
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    resize: vertical;
+}
+
+/* author's style */
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #FFCFAD;
+}
