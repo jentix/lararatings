@@ -6,8 +6,8 @@ class HomeController extends BaseController {
 
 	public function showHome()
 	{
-		
-		$ratings = DB::table('sites')->get();
+
+		$ratings = Sites::all();
 
 		// var_export($ratings);
 		
