@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 20 2013 г., 13:03
+-- Время создания: Июн 20 2013 г., 17:20
 -- Версия сервера: 5.5.31-log
 -- Версия PHP: 5.3.26
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `sites` (
 
 INSERT INTO `sites` (`id`, `name`, `date`, `description`, `link`) VALUES
 (1, 'Первый сайт', 1371460148, NULL, ''),
-(2, 'Второй сайт', 1371461148, NULL, '');
+(2, 'Второй сайт', 1371461148, 'Отличный сайтик ! )', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
