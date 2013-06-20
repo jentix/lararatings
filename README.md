@@ -17,7 +17,6 @@ Copy this project to default laravel framework folder.
 How to create laravel project. 
 <a href="http://laravel.com/docs/installation">laravel install</a>
 
-Create database "lararating".
-And table "sites" by sites.sql in project folder.  
+Create database "lararating", and table "sites" by 'lararating.sql' file in project folder.  
 
 
