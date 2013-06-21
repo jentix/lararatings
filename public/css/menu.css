@@ -8,6 +8,9 @@
 	position: relative;
 	right: 22px;
 	margin-top: 20px;
+	box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.4);
+	-moz-box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.4);
+	-webkit-box-shadow: 1px 1px 3px rgba(100, 100, 100, 0.4);
 }
 
 .fancyNav li{
@@ -73,9 +76,9 @@
 
 /* Treating the first LI and li:after elements separately */
 
-.fancyNav li:first-child{
+/*.fancyNav li:first-child{
 	border-radius: 4px 0 0 4px;
-}
+}*/
 
 .fancyNav li:first-child:after,
 .fancyNav li.selected:first-child:after{
@@ -83,12 +86,12 @@
 	-moz-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
 	-webkit-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
 	
-	border-radius:4px 0 0 4px;
+	/*border-radius:4px 0 0 4px;*/
 }
 
-.fancyNav li:last-child{
+/*.fancyNav li:last-child{
 	border-radius: 0 4px 4px 0;
-}
+}*/
 
 /* Treating the last LI and li:after elements separately */
 
@@ -98,7 +101,7 @@
 	-moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
 	-webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
 	
-	border-radius:0 4px 4px 0;
+	/*border-radius:0 4px 4px 0;*/
 }
 
 .fancyNav li:hover:after,
