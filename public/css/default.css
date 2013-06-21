@@ -25,14 +25,18 @@ textarea {
 header {
     width: 100%;
     height: 100px;
+    margin: 0;
     background-color: #FFCFAD;
+}
+/* что-бы прижать заголовок к верху */
+header h1 {
+    margin: 0;
 }
 
 .main-table a {
     font-size: 12pt;
     color: #3651BC;
 }
-
 .main-table a:hover {
     color: #7295D6;
 }

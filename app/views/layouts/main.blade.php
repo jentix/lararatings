@@ -22,6 +22,7 @@
     <![endif]-->
 </head>
 <body>
+	
 	<div class="container">
 		<header>
 			<h1>Laravel rating system</h1>
