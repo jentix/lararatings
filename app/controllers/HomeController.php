@@ -7,7 +7,7 @@ class HomeController extends BaseController {
 	public function showHome()
 	{
 
-		$ratings = Sites::all();
+		$ratings = Sites::where('id', '>', 0)->take(20)->get();
 
 		// convert dates from timestamp
 		foreach ($ratings as $rating) {
