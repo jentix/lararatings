@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-	<table class="table table-hover table-striped main-table">
+	<table class="table main-table">
 		<thead>
 			<tr>
 				<th>#</th>

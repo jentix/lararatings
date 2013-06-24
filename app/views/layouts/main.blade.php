@@ -11,7 +11,7 @@
 	
 	<link rel="shortcut icon" href="favicon.png">
 	<link href="css/default.css" rel="stylesheet" type="text/css">
-	<link href="css/menu.css" rel="stylesheet" type="text/css">
+	<link href="css/menu_assets/styles.css" rel="stylesheet" type="text/css">
 
 	<!-- bootstrap css -->
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -27,14 +27,19 @@
 	<div class="container">
 		<header>
 			<h1>Laravel rating system</h1>
-			
-			<nav>
-		        <ul class="fancyNav">
-		            <li id="all"><a href="#all">Все сайты</a></li>
-		            <li id="new"><a href="#new">Новые</a></li>
-		            <li id="add"><a href="#add">Добавить сайт</a></li>
-		        </ul>
-    		</nav>
+
+    		<div id='cssmenu'>
+			<ul>
+			   <li class='active'><a href='#'><span>Все</span></a></li>
+			   <li><a href='#'><span>Новые</span></a></li>
+			   <li class='last'><a href='#'><span>Добавить</span></a></li>
+			   <!-- <li class='has-sub'><a href='#'><span>Новые</span></a>
+			      <ul>
+			         <li class='last'><a href='#'><span>Item</span></a></li>
+			      </ul>
+			   </li> пункт с подменю -->
+			</ul>
+			</div>
 
 			@yield('head')
 		</header>

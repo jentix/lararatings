@@ -34,7 +34,9 @@ header h1 {
     position: relative;
     left: 5px;
 }
-
+.main-table {
+    background-color: #ffffff;
+}
 .main-table a {
     font-size: 12pt;
     color: #3651BC;
