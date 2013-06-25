@@ -19,7 +19,10 @@ textarea {
     resize: vertical;
 }
 .grey { color: #777777; }
-body { background: url('../img/brickwall.png') repeat; }
+body { 
+    background: url('../img/brickwall.png') repeat; 
+    background-attachment: fixed;
+}
 
 /* author's style */
 
