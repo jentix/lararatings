@@ -14,7 +14,16 @@ class HomeController extends BaseController {
 			$rating->date = date("d.m.Y" , $rating->date);
 		}
 		
-		$this->layout->content = View::make('home', array('ratings' => $ratings));
+		$data = array('ratings' => $ratings, 'main_menu' => 'all');
+
+		$this->layout = View::make('home')->with($data);
 	}
 
+	public function showNew()
+	{	
+		
+		$data = array('main_menu' => 'new');
+
+		$this->layout = View::make('new')->with($data);
+	}
 }

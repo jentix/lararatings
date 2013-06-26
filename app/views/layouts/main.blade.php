@@ -29,15 +29,18 @@
 			<h1>Laravel rating system</h1>
 
     		<div id='cssmenu'>
-			<ul>
-			   <li class='active'><a href='#'><span>Все</span></a></li>
-			   <li><a href='#'><span>Новые</span></a></li>
-			   <li class='last'><a href='#'><span>Добавить</span></a></li>
-			   <!-- <li class='has-sub'><a href='#'><span>Новые</span></a>
-			      <ul>
-			         <li class='last'><a href='#'><span>Item</span></a></li>
-			      </ul>
-			   </li> пункт с подменю -->
+			<ul>			    
+			   	@if ($main_menu == 'all') <li class='active'> @else <li> @endif
+			    <a href='/'><span>Все</span></a></li>
+			    @if ($main_menu == 'new') <li class='active'> @else <li> @endif
+			    <a href='new'><span>Новые</span></a></li>
+			    @if ($main_menu == 'add') <li class='active last'> @else <li class='last'> @endif
+			    <a href='add'><span>Добавить</span></a></li>
+			    <!-- <li class='has-sub'><a href='#'><span>Новые</span></a>
+			        <ul>
+			        	<li class='last'><a href='#'><span>Item</span></a></li>
+			        </ul>
+			    </li> пункт с подменю -->
 			</ul>
 			</div>
 
