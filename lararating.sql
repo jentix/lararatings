@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.8.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 24 2013 г., 14:45
--- Версия сервера: 5.5.31-log
--- Версия PHP: 5.3.26
+-- Время создания: Июл 01 2013 г., 10:48
+-- Версия сервера: 5.6.12-log
+-- Версия PHP: 5.4.16
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,8 +19,23 @@ SET time_zone = "+00:00";
 --
 -- База данных: `lararating`
 --
-CREATE DATABASE `lararating` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `lararating` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `lararating`;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `clients`
+--
+
+CREATE TABLE IF NOT EXISTS `clients` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `ip` varchar(15) NOT NULL,
+  `site_id` int(10) unsigned NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `site_id` (`site_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
