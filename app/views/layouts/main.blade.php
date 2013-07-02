@@ -50,10 +50,11 @@
 			@yield('content')
 		</div>
 	</div>
-	
+	@section('js') 
 	<!-- jQuery -->
 	<script src="js/jquery-1.10.1.min.js"></script>
 	<!-- bootstrap js -->
 	<script src="js/bootstrap.min.js"></script>
+	@show
 </body>
 </html>

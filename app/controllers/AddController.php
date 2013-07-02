@@ -2,7 +2,7 @@
 
 class AddController extends BaseController {
 
-	protected $layout = 'layouts.main';
+	// protected $layout = 'layouts.main';
 
 	public function showAdd()
 	{	

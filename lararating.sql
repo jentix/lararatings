@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 01 2013 г., 10:48
+-- Время создания: Июл 02 2013 г., 15:50
 -- Версия сервера: 5.6.12-log
 -- Версия PHP: 5.4.16
 
@@ -30,9 +30,10 @@ USE `lararating`;
 
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `ip` varchar(15) NOT NULL,
   `site_id` int(10) unsigned NOT NULL,
-  `time` int(11) NOT NULL,
+  `ip` int(10) NOT NULL,
+  `referer` varchar(255) DEFAULT NULL,
+  `time` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `site_id` (`site_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
@@ -51,16 +52,7 @@ CREATE TABLE IF NOT EXISTS `sites` (
   `link` varchar(60) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `rtg_name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Таблица рэйтингов' AUTO_INCREMENT=4 ;
-
---
--- Дамп данных таблицы `sites`
---
-
-INSERT INTO `sites` (`id`, `name`, `date`, `description`, `link`) VALUES
-(1, 'Первый сайт', 1371460148, NULL, ''),
-(2, 'Второй сайт', 1371461148, 'Отличный сайтик ! )', ''),
-(3, 'Новый веб', 1371583148, 'городской провайдер', 'http://fryazino.net/');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='Таблица рэйтингов' AUTO_INCREMENT=6 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

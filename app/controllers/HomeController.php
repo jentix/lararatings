@@ -2,7 +2,7 @@
 
 class HomeController extends BaseController {
 
-	protected $layout = 'layouts.main';
+	// protected $layout = 'layouts.main';
 
 	public function showHome()
 	{

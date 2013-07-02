@@ -7,6 +7,8 @@ class BaseController extends Controller {
 	 *
 	 * @return void
 	 */
+	protected $layout = 'layouts.main';
+	
 	protected function setupLayout()
 	{
 		if ( ! is_null($this->layout))
