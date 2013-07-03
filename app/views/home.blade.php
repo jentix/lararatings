@@ -6,6 +6,7 @@
 @stop
 
 @section('content')
+	<div id="definition">{{ $i = 1 }}</div>
 	<table class="table main-table">
 		<thead>
 			<tr>
@@ -18,7 +19,7 @@
 		<tbody>
 			@foreach ($ratings as $rating)
 				<tr>
-					<td> {{ $rating->id }} </td>
+					<td> {{ $i; $i++; }} </td>
 					<td> 
 						<a href="{{ $rating->link }}"> {{ $rating->name }} </a>
 						@if ($rating->description)

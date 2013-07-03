@@ -5,31 +5,18 @@
 	Добавить сайт
 @stop
 
-@section('js')
-	@parent
-	<!-- счётчик -->
-	<script>
-		var p = document.getElementsByTagName("script")[0]
-		s = document.createElement("script")
-		s.type = "text/javascript"
-    	s.async = true
-    	s.src = "js/lawatch.js"
-    	document.body.insertBefore(s, p)
+@section('content')
+	@if ($auth_but)
+		<div id="log_btns_group">
+			<h4>Что-бы добавить сайт, авторизируйтесь</h4>
+			<span id="log_btns">
+				<a class="btn" href="login">Войти</a>
+				<a class="btn" href="signup">Зарегистрироваться</a>
+			</span>
+		</div>
+	@endif
+@stop
 
-		if (s.readyState && !s.onload) {
-			s.onreadystatechange = function() {
-				if (s.readyState == "loaded" || s.readyState == "complete") {
-					s.onreadystatechange = null;
-					watcher.id = 5;
-					watcher.touch();
-				}
-			}
-		}
-		else {
-			s.onload = function() {
-				watcher.id = 5;
-				watcher.touch();
-			};
-		}
-	</script>
+@section('js')
+	@parent	
 @stop

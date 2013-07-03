@@ -7,7 +7,7 @@ class TouchController extends Controller {
 		$client = new Clients;
 		$client->ip = ip2long($_SERVER['REMOTE_ADDR']);
 		$client->referer = $_SERVER['HTTP_REFERER'];
-		if (isset($_POST['id'])) $client->site_id = $_POST['id'];
+		if (isset($_POST['id'])) $client->site_id = intval($_POST['id']);
 		$client->time = time();
 		$client->save();
 	}

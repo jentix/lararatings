@@ -23,6 +23,8 @@ body {
     background: url('../img/brickwall.png') repeat; 
     background-attachment: fixed;
 }
+/* скрывает блок с объявлением переменных php в шаблоне */
+#definition {display: none;}
 
 /* author's style */
 
@@ -37,6 +39,7 @@ header h1 {
     position: relative;
     left: 5px;
 }
+
 .main-table {
     background-color: #ffffff;
 }
@@ -47,4 +50,29 @@ header h1 {
 }
 .main-table a:hover {
     color: #5E318A;
+}
+
+#intocontent {
+    background-color: #fff;
+    min-height: 500px; 
+}
+#log_btns_group {
+    width: 360px;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+}
+#log_btns {margin-left: 60px;}
+
+.login-form {
+    width: 510px;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+}
+.login-form h3 {text-align: center;}
+.login-btns {
+    position: relative;
+    left: 140px;
+    bottom: 10px;
 }
