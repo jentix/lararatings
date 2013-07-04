@@ -9,8 +9,8 @@ Until, it read the engine and fun
 
 Don't take seriously
 
-WARNING !
-code comments on Russian language
+code comments on Russian language!
+
 -----------
 INSTALL
 
