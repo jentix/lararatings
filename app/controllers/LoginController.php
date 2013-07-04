@@ -19,13 +19,25 @@ class LoginController extends BaseController {
 				if (isset($input['remember'])) $remember = true;
 					else $remember = false;
 
-				// $data['psw'] = Hash::make('qwerty');
+				$rules = array(
+				    'email' => 'required|email',
+				    'psw'  => 'required|between:4,50'
+				);
+				$validation = Validator::make($input, $rules);
 
-				if (Auth::attempt(array('email' => $input['email'], 'password' => $input['psw']), $remember)) {
-				    return Redirect::to('/');
+				if ($validation->fails()) {
+					$messages = $validation->messages();
+					$data['messages'] = $messages->all();
+					$this->layout = View::make('login')->with($data);
 				}
 				else {
-					$this->layout = View::make('login')->with($data);
+					// $data['psw'] = Hash::make('qwerty');
+					if (Auth::attempt(array('email' => $input['email'], 'password' => $input['psw']), $remember)) {
+					    return Redirect::to('/');
+					}
+					else {
+						$this->layout = View::make('login')->with($data);
+					}
 				}
 			}
 			else {

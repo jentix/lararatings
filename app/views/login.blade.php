@@ -33,5 +33,12 @@
 		    <a class="btn btn-warning" href="#">Восстановить пароль</a>
 		</div>
     </form>
-
+    @if (isset($messages))
+    	<div class="alert alert-error login-errors">
+    		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		    @foreach ($messages as $message)
+		    	<p>{{$message}}</p>
+		    @endforeach
+		</div>
+	@endif
 @stop

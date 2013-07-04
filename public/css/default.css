@@ -66,13 +66,15 @@ header h1 {
 
 .login-form {
     width: 510px;
-    margin: 0 auto;
-    position: relative;
-    top: 100px;
+    margin: 100px auto 0;
 }
 .login-form h3 {text-align: center;}
 .login-btns {
     position: relative;
     left: 140px;
     bottom: 10px;
+}
+.login-errors {
+    width: 600px;
+    margin: 10px auto 0;
 }
