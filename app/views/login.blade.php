@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-	
+
 	<form class="form-horizontal login-form" method="post">
 		<h3>Вход на сайт</h3>
     	<div class="control-group">
@@ -29,7 +29,7 @@
 	   	 	</div>
 	    </div>
 	    <div class="login-btns"> 
-		    <button type="submit" class="btn btn-success">Войти</button>
+		    <button type="submit" name="enter" class="btn btn-success">Войти</button>
 		    <a class="btn btn-warning" href="#">Восстановить пароль</a>
 		</div>
     </form>

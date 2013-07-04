@@ -27,7 +27,6 @@
 	<div class="container">
 		<header>
 			<h1>Laravel rating system</h1>
-
     		<div id='cssmenu'>
 			<ul>			    
 			   	@if ($main_menu == 'all') <li class='active'> @else <li> @endif
@@ -46,7 +45,6 @@
 			    </li> пункт с подменю -->
 			</ul>
 			</div>
-
 			@yield('head')
 		</header>
 		<div id="content"> 
