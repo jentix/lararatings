@@ -36,6 +36,9 @@
 			    <a href='new'><span>Новые</span></a></li>
 			    @if ($main_menu == 'add') <li class='active last'> @else <li class='last'> @endif
 			    <a href='add'><span>Добавить</span></a></li>
+			    @if ($login)
+			    <li><a href="logout"><span>Выйти</span></a></li>
+			    @endif
 			    <!-- <li class='has-sub'><a href='#'><span>Новые</span></a>
 			        <ul>
 			        	<li class='last'><a href='#'><span>Item</span></a></li>

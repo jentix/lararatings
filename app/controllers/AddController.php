@@ -11,15 +11,16 @@ class AddController extends BaseController {
 
 		if (Auth::check()){
 			$data['auth_but'] = false;
+			$data['login'] = true;		
 
 			$this->layout = View::make('add')->with($data);
 		}
 		else {
 			$data['auth_but'] = true;
+			$data['login'] = false;
 
 			$this->layout = View::make('add')->with($data);
 		}
 
-		
 	}
 }
