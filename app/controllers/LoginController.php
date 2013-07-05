@@ -31,11 +31,12 @@ class LoginController extends BaseController {
 					$this->layout = View::make('login')->with($data);
 				}
 				else {
-					// $data['psw'] = Hash::make('qwerty');
+					
 					if (Auth::attempt(array('email' => $input['email'], 'password' => $input['psw']), $remember)) {
-					    return Redirect::to('/');
+					    return Redirect::to('/'); // если зашел
 					}
 					else {
+						$data['messages'] = array('ошибка' => 'неверный логин/пароль');
 						$this->layout = View::make('login')->with($data);
 					}
 				}
