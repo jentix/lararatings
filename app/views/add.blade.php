@@ -15,6 +15,21 @@
 			</span>
 		</div>
 	@endif
+
+	@if (isset($login))
+		<form>
+			<label class="control-label" for="inputEmail"><strong>Название</strong></label>
+			<input name="name" id="inputName" type="text" class="span4" placeholder="Name" maxlength="60">
+			
+			<label class="control-label" for="inputLink"><strong>Ссылка на ресурс</strong></label>
+			<input name="link" id="inputLink" type="text" class="span4" placeholder="Link" maxlength="80">
+			
+			<label class="control-label" for="inputDesc"><strong>Описание</strong></label>
+			<textarea name="desc" id="inputDesc" class="span4" maxlength="140" rows="3" placeholder="Your description..."></textarea>			
+			
+			<br><button id="addbutton" class="btn btn-large">Добавить</button>
+		</form> 
+	@endif
 @stop
 
 @section('js')
