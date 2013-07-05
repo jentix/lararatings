@@ -18,7 +18,7 @@
 
 	@if (isset($login))
 		<form>
-			<label class="control-label" for="inputEmail"><strong>Название</strong></label>
+			<label class="control-label" for="inputName"><strong>Название</strong></label>
 			<input name="name" id="inputName" type="text" class="span4" placeholder="Name" maxlength="60">
 			
 			<label class="control-label" for="inputLink"><strong>Ссылка на ресурс</strong></label>
