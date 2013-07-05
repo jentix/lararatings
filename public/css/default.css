@@ -56,6 +56,7 @@ header h1 {
     background-color: #fff;
     min-height: 500px; 
 }
+/* кнопки вход зврегистрироваться */
 #log_btns_group {
     width: 360px;
     margin: 0 auto;
@@ -63,7 +64,7 @@ header h1 {
     top: 150px;
 }
 #log_btns {margin-left: 60px;}
-
+/* страница входа */
 .login-form {
     width: 510px;
     margin: 100px auto 0;
@@ -77,4 +78,15 @@ header h1 {
 .login-errors {
     width: 600px;
     margin: 10px auto 0;
+}
+/* страница регистрации */
+#reg-form {
+    width: 300px;
+    margin: 100px auto 0;
+    /*border: 1px solid #000;*/
+}
+#reg-form h4 {text-align: center; position: relative; right: 10px;}
+#regbutton {
+    position: relative;
+    left: 30px;
 }

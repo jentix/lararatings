@@ -12,7 +12,7 @@
     	<div class="control-group">
 	   		<label class="control-label" for="inputEmail"><strong>Почта</strong></label>
 		    <div class="controls">
-		    	<input type="text" id="inputEmail" name="email" placeholder="Email">
+		    	<input type="text" id="inputEmail" name="email" placeholder="Email" maxlength="50">
 	    	</div>
     	</div>
 	    <div class="control-group">

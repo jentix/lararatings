@@ -21,7 +21,7 @@ class LoginController extends BaseController {
 
 				$rules = array(
 				    'email' => 'required|email',
-				    'psw'  => 'required|between:4,50'
+				    'psw'  => 'required|between:5,40'
 				);
 				$validation = Validator::make($input, $rules);
 
