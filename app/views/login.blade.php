@@ -6,7 +6,6 @@
 @stop
 
 @section('content')
-
 	<form class="form-horizontal login-form" method="post">
 		<h3>Вход на сайт</h3>
     	<div class="control-group">

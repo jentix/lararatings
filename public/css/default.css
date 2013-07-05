@@ -85,7 +85,7 @@ header h1 {
     margin: 100px auto 0;
     /*border: 1px solid #000;*/
 }
-#reg-form h4 {text-align: center; position: relative; right: 10px;}
+#reg-form h4 {text-align: center; position: relative; right: 15px;}
 #regbutton {
     position: relative;
     left: 30px;

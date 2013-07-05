@@ -26,4 +26,12 @@
 		<button id="regbutton" class="btn btn-large">Зарегистрироваться</button>
 	</form>
 	</div>
+	@if (isset($messages))
+    	<div class="alert alert-error login-errors">
+    		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		    @foreach ($messages as $message)
+		    	<p>{{$message}}</p>
+		    @endforeach
+		</div>
+	@endif
 @stop

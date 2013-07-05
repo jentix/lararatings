@@ -16,9 +16,7 @@ class HomeController extends BaseController {
 		
 		$data = array('ratings' => $ratings, 'main_menu' => 'all');
 
-		if (Auth::check()){
-			$data['login'] = true;
-		}
+		if (Auth::check()) $data['login'] = true;
 		else $data['login'] = false;
 
 		$this->layout = View::make('home')->with($data);
@@ -29,9 +27,7 @@ class HomeController extends BaseController {
 		
 		$data = array('main_menu' => 'new');
 
-		if (Auth::check()){
-			$data['login'] = true;
-		}
+		if (Auth::check()) $data['login'] = true;
 		else $data['login'] = false;
 
 		$this->layout = View::make('new')->with($data);
