@@ -29,7 +29,7 @@
 	    </div>
 	    <div class="login-btns"> 
 		    <button type="submit" name="enter" class="btn btn-success">Войти</button>
-		    <a class="btn btn-warning" href="#">Восстановить пароль</a>
+		    <a class="btn btn-warning" href="remind">Восстановить пароль</a>
 		</div>
     </form>
     @if (isset($messages))
