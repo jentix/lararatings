@@ -9,8 +9,7 @@ class LoginController extends BaseController {
 		}
 		else {
 			
-			$data          = array('main_menu' => 'empty'); // заглушка для активного меню
-			$data['login'] = false; // отключить меню для авторизованого пользователя
+			$data = array('main_menu' => 'empty'); // заглушка для активного меню
 
 			if (isset($_POST['enter'])) {
 				$input = Input::all();

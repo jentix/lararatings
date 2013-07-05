@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-	@if ($auth_but)
+	@if (isset($auth_but))
 		<div id="log_btns_group">
 			<h4>Что-бы добавить сайт, авторизируйтесь</h4>
 			<span id="log_btns">

@@ -8,14 +8,14 @@ class SignupController extends BaseController {
 			return Redirect::to('/');
 		}
 		else {
-			$data = array('main_menu' => 'empty', 'login' => false); 
+			$data = array('main_menu' => 'empty'); 
 
 			$this->layout = View::make('signup')->with($data);
 		}
 	}
 	
 	public function register() {
-		$data = array('main_menu' => 'empty', 'login' => false); 
+		$data = array('main_menu' => 'empty'); 
 
 		$input = Input::all();
 		$rules = array(
