@@ -105,3 +105,10 @@ header h1 {
     width: 780px;
     float: right;
 }
+.add_site_title { 
+    text-align: center; 
+    margin: 0 0 20px 0;
+    position: relative;
+    left: 200px;
+}
+#get_m_sites { position: relative; left: 340px; }

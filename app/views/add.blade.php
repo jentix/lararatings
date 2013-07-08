@@ -7,7 +7,7 @@
 
 @section('content')
 	@if ($login)
-		<h4 style="text-align: center; margin: 0 0 20px 0;">Мои сайты</h4>
+		<h4 class="add_site_title">Мои сайты</h4>
 		<div id="left-call-add">
 		<form>
 			<label class="control-label" for="inputName"><strong>Название</strong></label>
@@ -62,6 +62,9 @@
 			@endforeach
 			</tbody>
 			</table>
+			@if (isset($get_more_site))
+				<button id="get_m_sites" class="btn" count="{{$get_more_site}}">Ещё сайты..</button>
+			@endif
 		</div>
 	@else 
 		<div id="log_btns_group">

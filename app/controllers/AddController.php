@@ -33,7 +33,11 @@ class AddController extends BaseController {
 				}
 			}
 
-			$sites = Sites::where('user_id', '=', Auth::user()->id)->orderBy('date', 'desc')->take(10)->get();
+			$sites_per_page = 3;
+			$sites_count = Sites::where('user_id', '=', Auth::user()->id)->count();
+			if ($sites_count > $sites_per_page) $data['get_more_site'] = $sites_per_page;
+
+			$sites = Sites::where('user_id', '=', Auth::user()->id)->orderBy('date', 'desc')->take($sites_per_page)->get();
 			foreach ($sites as $site) {
 				$site->date = date("d.m.Y" , $site->date);
 			}
