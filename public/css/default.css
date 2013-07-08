@@ -93,8 +93,15 @@ header h1 {
 }
 
 /* add page */
-#left-call-add {width: 350px;}
+#left-call-add {
+    width: 350px;
+    float: left;
+}
 .add-messages {
     width: 320px;
     margin: 0;
+}
+#right-call-add {
+    width: 780px;
+    float: right;
 }

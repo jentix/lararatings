@@ -7,6 +7,7 @@
 
 @section('content')
 	@if ($login)
+		<h4 style="text-align: center; margin: 0 0 20px 0;">Мои сайты</h4>
 		<div id="left-call-add">
 		<form>
 			<label class="control-label" for="inputName"><strong>Название</strong></label>
@@ -36,6 +37,31 @@
 				{{$success}}
 			</div>
 		@endif
+		</div>
+		<div id="right-call-add">
+			<table class="table main-table">
+			<thead>
+			<tr>
+				<th>Сайт</th>
+				<th>Просмотров</th>
+				<th>Добавлен</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach ($my_sites as $site)
+			<tr>
+				<td> 
+					<a href="{{ $site->link }}"> {{ $site->name }} </a>
+					@if ($site->description)
+						<p class="grey">{{ $site->description }}</p> 
+					@endif 
+				</td>
+				<td></td>
+				<td> {{ $site->date }} </td>
+			</tr>
+			@endforeach
+			</tbody>
+			</table>
 		</div>
 	@else 
 		<div id="log_btns_group">

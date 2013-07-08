@@ -31,7 +31,13 @@ class AddController extends BaseController {
 					$newsite->save();
 					$data['success'] = 'Сайт успешно добавлен';
 				}
-			}	
+			}
+
+			$sites = Sites::where('user_id', '=', Auth::user()->id)->orderBy('date', 'desc')->take(10)->get();
+			foreach ($sites as $site) {
+				$site->date = date("d.m.Y" , $site->date);
+			}
+			$data['my_sites'] = $sites;	
 		}
 		else {
 			$data['login'] = false;
