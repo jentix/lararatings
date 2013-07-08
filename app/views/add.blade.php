@@ -6,17 +6,7 @@
 @stop
 
 @section('content')
-	@if (isset($auth_but))
-		<div id="log_btns_group">
-			<h4>Что-бы добавить сайт, авторизируйтесь</h4>
-			<span id="log_btns">
-				<a class="btn" href="login">Войти</a>
-				<a class="btn" href="signup">Зарегистрироваться</a>
-			</span>
-		</div>
-	@endif
-
-	@if (isset($login))
+	@if ($login)
 		<form>
 			<label class="control-label" for="inputName"><strong>Название</strong></label>
 			<input name="name" id="inputName" type="text" class="span4" placeholder="Name" maxlength="60">
@@ -28,7 +18,15 @@
 			<textarea name="desc" id="inputDesc" class="span4" maxlength="140" rows="3" placeholder="Your description..."></textarea>			
 			
 			<br><button id="addbutton" class="btn btn-large">Добавить</button>
-		</form> 
+		</form>
+	@else 
+		<div id="log_btns_group">
+			<h4>Что-бы добавить сайт, авторизируйтесь</h4>
+			<span id="log_btns">
+				<a class="btn" href="login">Войти</a>
+				<a class="btn" href="signup">Зарегистрироваться</a>
+			</span>
+		</div> 
 	@endif
 @stop
 
