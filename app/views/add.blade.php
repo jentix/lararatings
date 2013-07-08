@@ -28,6 +28,7 @@
 			</span>
 		</div> 
 	@endif
+
 @stop
 
 @section('js')
