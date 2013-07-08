@@ -79,6 +79,7 @@ header h1 {
     width: 600px;
     margin: 10px auto 0;
 }
+
 /* страница регистрации */
 #reg-form {
     width: 300px;
@@ -89,4 +90,11 @@ header h1 {
 #regbutton {
     position: relative;
     left: 30px;
+}
+
+/* add page */
+#left-call-add {width: 350px;}
+.add-messages {
+    width: 320px;
+    margin: 0;
 }
