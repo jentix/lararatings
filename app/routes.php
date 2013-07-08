@@ -44,3 +44,6 @@ Route::post('password/reset/{token}', function()
 
 // сюда отправляются ajax запросы для регистрации посещений
 Route::post('touch', 'TouchController@clientTouch');
+
+//ajax controller
+Route::post('ajax/getMySites', 'AjaxController@getMySites');

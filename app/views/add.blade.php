@@ -63,7 +63,7 @@
 			</tbody>
 			</table>
 			@if (isset($get_more_site))
-				<button id="get_m_sites" class="btn" count="{{$get_more_site}}">Ещё сайты..</button>
+				<button id="get_m_sites" class="btn" count="{{$get_more_site}}" current="{{$get_more_site}}">Ещё сайты..</button>
 			@endif
 		</div>
 	@else 
@@ -78,5 +78,20 @@
 @stop
 
 @section('js')
-	@parent	
+	@parent
+	<!-- подгрузка дополнительных сайтов -->
+	<script>
+		$("#get_m_sites").click(function(){
+			var count = $(this).attr('count');
+			var current = $(this).attr('current');
+			$.post('/ajax/getMySites',
+                    {'count':count, 'current':current},
+                    function(result) {
+                        if (result != 0) {                            
+                                                        
+                        }
+                    }
+            );
+		});
+	</script>
 @stop
