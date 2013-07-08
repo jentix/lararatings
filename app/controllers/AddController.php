@@ -33,8 +33,9 @@ class AddController extends BaseController {
 				}
 			}
 
-			$sites_per_page = 3;
+			$sites_per_page = 3; // сайтов за раз
 			$sites_count = Sites::where('user_id', '=', Auth::user()->id)->count();
+			// если общее кол-во больше чем за раз, то выводим кнопку показать ещё 
 			if ($sites_count > $sites_per_page) $data['get_more_site'] = $sites_per_page;
 
 			$sites = Sites::where('user_id', '=', Auth::user()->id)->orderBy('date', 'desc')->take($sites_per_page)->get();

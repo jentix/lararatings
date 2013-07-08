@@ -7,7 +7,6 @@
 
 @section('content')
 	@if ($login)
-		<h4 class="add_site_title">Мои сайты</h4>
 		<div id="left-call-add">
 		<form>
 			<label class="control-label" for="inputName"><strong>Название</strong></label>
@@ -39,6 +38,7 @@
 		@endif
 		</div>
 		<div id="right-call-add">
+			<h4 class="add_site_title">Мои сайты</h4>
 			<table class="table main-table">
 			<thead>
 			<tr>
