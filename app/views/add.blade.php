@@ -47,7 +47,7 @@
 				<th>Добавлен</th>
 			</tr>
 			</thead>
-			<tbody>
+			<tbody id="sitestbl">
 			@foreach ($my_sites as $site)
 			<tr>
 				<td> 
@@ -82,15 +82,21 @@
 	<!-- подгрузка дополнительных сайтов -->
 	<script>
 		$("#get_m_sites").click(function(){
-			var count = $(this).attr('count');
-			var current = $(this).attr('current');
+			var count = $(this).attr('count'); // сайтов за раз
+			var current = $(this).attr('current'); // текущая позиция 
 			$.post('/ajax/getMySites',
                     {'count':count, 'current':current},
                     function(result) {
-                        if (result != 0) {                            
-                                                        
+                        if (result != 0) {  
+                        	var sitenum = 0;                          
+                        	$.each(result,function(i,item){
+                        		$("#sitestbl").append("<tr>"+"<td>"+'<a href="'+item.link+'">'+item.name+"</a>"+'<p class="grey">'+item.description+"</p>"+"</td>"+"<td></td>"+"<td>"+item.date+"</td>"+"</tr>");
+                            	sitenum++;
+                            });
+                            if (sitenum<count)  $("#get_m_sites").hide(); // прячем саму кнопку                            
+                        	$("#get_m_sites").attr('current', current*1+sitenum);
                         }
-                    }
+                    }, 'json'
             );
 		});
 	</script>
