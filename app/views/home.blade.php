@@ -32,4 +32,5 @@
 			@endforeach
 		</tbody>
 	</table>
+	{{$ratings->links();}}
 @stop

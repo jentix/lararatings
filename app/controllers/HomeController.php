@@ -7,7 +7,7 @@ class HomeController extends BaseController {
 	public function showHome()
 	{
 
-		$ratings = Sites::where('id', '>', 0)->take(20)->get();
+		$ratings = Sites::where('id', '>', 0)->paginate(5);
 
 		// convert dates from timestamp
 		foreach ($ratings as $rating) {
@@ -23,8 +23,12 @@ class HomeController extends BaseController {
 
 	public function showNew()
 	{	
-		
-		$data = array('main_menu' => 'new');
+		$ratings = Sites::where('id', '>', 0)->orderBy('id', 'desc')->paginate(5);
+		foreach ($ratings as $rating) {
+			$rating->date = date("d.m.Y" , $rating->date);
+		}
+
+		$data = array('ratings' => $ratings, 'main_menu' => 'new');
 
 		if (Auth::check()) $data['login'] = true;
 
