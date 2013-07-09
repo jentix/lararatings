@@ -25,7 +25,7 @@
 		</div>
 		
 		<label class="checkbox">
-			<input type="checkbox">Я соглашаюсь с правилами 
+			<input type="checkbox" name="agree">Я соглашаюсь с правилами 
 		</label>
 		<a id="info" class="btn btn-link reg-spl-btn">Показать правила ресурса <span class="caret"></span></a>
 		<div class="myspoiler">

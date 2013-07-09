@@ -21,7 +21,8 @@ class SignupController extends BaseController {
 		$rules = array(
 			'email' => 'required|email|unique:users',
 			'psw'   => 'required|between:5,40',
-			'2psw'  => 'required|between:5,40|same:psw'
+			'2psw'  => 'required|between:5,40|same:psw',
+			'agree' => 'required'
 		);
 		$validation = Validator::make($input, $rules);
 

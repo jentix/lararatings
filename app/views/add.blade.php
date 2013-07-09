@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-	@if ($login)
+	@if (isset($login))
 		<div id="left-call-add">
 		<form>
 			<label class="control-label" for="inputName"><strong>Название</strong></label>

@@ -24,6 +24,7 @@ class AddController extends BaseController {
 				}
 				else {
 					$newsite = new Sites;
+					$newsite->user_id     = Auth::user()->id;
 					$newsite->name        = Input::get('name');
 					$newsite->description = Input::get('desc');
 					$newsite->link        = Input::get('link');
@@ -43,9 +44,6 @@ class AddController extends BaseController {
 				$site->date = date("d.m.Y" , $site->date);
 			}
 			$data['my_sites'] = $sites;	
-		}
-		else {
-			$data['login'] = false;
 		}
 
 		$this->layout = View::make('add')->with($data);
