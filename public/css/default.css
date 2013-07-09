@@ -23,6 +23,12 @@ body {
     background: url('../img/brickwall.png') repeat; 
     background-attachment: fixed;
 }
+.myspoiler {
+    width: 100%;
+    display: none;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
 /* скрывает блок с объявлением переменных php в шаблоне */
 #definition {display: none;}
 

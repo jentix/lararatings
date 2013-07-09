@@ -63,7 +63,7 @@
 			</tbody>
 			</table>
 			@if (isset($get_more_site))
-				<button id="get_m_sites" class="btn" count="{{$get_more_site}}" current="{{$get_more_site}}">Ещё сайты..</button>
+				<button id="get_m_sites" class="btn" data-loading-text="Loading..." count="{{$get_more_site}}" current="{{$get_more_site}}">Ещё сайты..</button>
 			@endif
 		</div>
 	@else 

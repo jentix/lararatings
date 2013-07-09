@@ -28,7 +28,9 @@
 			<input type="checkbox">Я соглашаюсь с правилами 
 		</label>
 		<a id="info" class="btn btn-link reg-spl-btn">Показать правила ресурса <span class="caret"></span></a>
-		
+		<div class="myspoiler">
+			<p>Тут что-то есть...</p>
+		</div>
 		<button id="regbutton" class="btn btn-large">Зарегистрироваться</button>
 	</form>
 	</div>
@@ -40,4 +42,14 @@
 		    @endforeach
 		</div>
 	@endif
+@stop
+
+@section('js')
+	@parent
+	<!-- spoiler -->
+	<script type="text/javascript">
+	$("#info").click(function(){
+		$('.myspoiler').slideToggle();
+	});
+	</script>
 @stop
