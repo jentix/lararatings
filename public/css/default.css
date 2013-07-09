@@ -90,8 +90,12 @@ header h1 {
 #regbutton {
     position: relative;
     left: 30px;
+    margin-top: 10px; 
 }
-
+.reg-spl-btn {
+    position: relative;
+    left: 25px;
+}
 /* add page */
 #left-call-add {
     width: 350px;

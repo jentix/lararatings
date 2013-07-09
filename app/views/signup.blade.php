@@ -23,6 +23,12 @@
 			<label class="control-label" for="input2Pass"><strong>Повторите пароль</strong></label>
 			<input name="2psw" id="input2Pass" type="password" class="span3" placeholder="password" maxlength="40">
 		</div>
+		
+		<label class="checkbox">
+			<input type="checkbox">Я соглашаюсь с правилами 
+		</label>
+		<a id="info" class="btn btn-link reg-spl-btn">Показать правила ресурса <span class="caret"></span></a>
+		
 		<button id="regbutton" class="btn btn-large">Зарегистрироваться</button>
 	</form>
 	</div>
