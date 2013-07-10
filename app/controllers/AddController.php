@@ -14,7 +14,7 @@ class AddController extends BaseController {
 				$input = Input::all();
 				$rules = array(
 					'name' => 'required|max:60|unique:sites',
-					'link'   => 'required|max:80|url',
+					'link'   => 'required|max:100|url',
 					'desc'  => 'max:140'
 				);
 				$validation = Validator::make($input, $rules);

@@ -34,3 +34,7 @@
 	</table>
 	{{$ratings->links();}}
 @stop
+
+@section('js')
+@parent
+@stop
