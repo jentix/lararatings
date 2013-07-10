@@ -58,7 +58,9 @@
 				</td>
 				<td></td>
 				<td> {{ $site->date }} </td>
+				<td class="show-code"><i class="icon-chevron-down" id="{{$site->id}}"></i></td>
 			</tr>
+			<tr class="table-code id{{$site->id}}"><td colspan="4"><pre>{{$code_start}}{{$site->id}}{{$code_end}}</pre></td></tr>
 			@endforeach
 			</tbody>
 			</table>
@@ -98,6 +100,20 @@
                         }
                     }, 'json'
             );
+		});
+
+		$(".show-code").click(function(){
+			var id = $(this).children().attr("id");
+			var str = ".id"+id;
+			if ($(this).children().hasClass("icon-chevron-down")) {
+				$(this).children().removeClass("icon-chevron-down");
+				$(this).children().addClass("icon-chevron-up");
+			}
+			else {
+				$(this).children().removeClass("icon-chevron-up");
+				$(this).children().addClass("icon-chevron-down");
+			}
+			$(str).toggle();
 		});
 	</script>
 @stop

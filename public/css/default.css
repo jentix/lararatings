@@ -120,3 +120,11 @@ header h1 {
     margin: 0 0 20px 0;
 }
 #get_m_sites { position: relative; left: 340px; }
+.table-code {
+    display: none;
+    background-color: #FCFCD2;
+}
+.table-code td {
+    width: 100%;
+}
+.show-code { cursor: pointer; }
