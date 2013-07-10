@@ -124,7 +124,7 @@ header h1 {
     display: none;
     background-color: #FCFCD2;
 }
-.table-code td {
-    width: 100%;
+.table-code td pre{
+    color: #AF001F;
 }
 .show-code { cursor: pointer; }
