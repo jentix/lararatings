@@ -58,7 +58,7 @@
 				</td>
 				<td></td>
 				<td> {{ $site->date }} </td>
-				<td class="show-code"><i class="icon-chevron-down" id="{{$site->id}}"></i></td>
+				<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="{{$site->id}}"></i></td>
 			</tr>
 			<tr class="table-code id{{$site->id}}"><td colspan="4"><pre>{{$code_start}}{{$site->id}}{{$code_end}}</pre></td></tr>
 			@endforeach
