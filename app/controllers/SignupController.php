@@ -35,7 +35,6 @@ class SignupController extends BaseController {
 			$user = new User;
 			$user->email = $input['email'];
 			$user->password = Hash::make($input['psw']);
-			$user->reg_hash = md5($input['email']);
 			$user->save();
 			Auth::login($user);
 			return Redirect::to('/');

@@ -29,7 +29,7 @@
 		</label>
 		<a id="info" class="btn btn-link reg-spl-btn">Показать правила ресурса <span class="caret"></span></a>
 		<div class="myspoiler">
-			<p>Тут что-то есть...</p>
+			<p>продать мне душу</p>
 		</div>
 		<button id="regbutton" class="btn btn-large">Зарегистрироваться</button>
 	</form>

@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'rating@fryazino.net', 'name' => 'Mr.Boris'),
+	'from' => array('address' => 'rating@fryazino.net', 'name' => 'Mr.Rating'),
 
 	/*
 	|--------------------------------------------------------------------------
