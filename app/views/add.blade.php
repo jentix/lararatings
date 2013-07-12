@@ -66,7 +66,7 @@
 			<tr class="table-code id{{$site->id}}">
 				<td colspan="4">
 					<pre>{{$code_start}}{{$site->id}}{{$code_end}}</pre>
-					<span class="label hover"><i class="icon-pencil" title="изменить"></i></span>
+					<span class="label hover edits" name="{{$site->name}}"><i class="icon-pencil" title="изменить"></i></span>
 					<span class="label hover"><i class="icon-remove" title="удалить"></i></span>
 				</td>
 			</tr>
@@ -77,6 +77,30 @@
 				<button id="get_m_sites" class="btn" data-loading-text="Loading..." count="{{$get_more_site}}" current="{{$get_more_site}}">Ещё сайты..</button>
 			@endif
 		</div>
+		<!-- edit modal -->
+		<div id="modaledit" class="modal hide fade">
+		    <div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Изменение данных сайта <span id="site_name"></span></h3>
+		    </div>
+		    <div class="modal-body">
+		    	<form>
+		    		<label class="control-label" for="inputName"><strong>Название</strong></label>
+					<input name="name" id="inputName" type="text" class="span4" placeholder="Name" maxlength="60">
+					
+					<label class="control-label" for="inputLink"><strong>Ссылка на ресурс</strong></label>
+					<input name="link" id="inputLink" type="text" class="span4" placeholder="Link" maxlength="80">
+					
+					<label class="control-label" for="inputDesc"><strong>Описание</strong></label>
+					<textarea name="desc" id="inputDesc" class="span4" maxlength="140" rows="3" placeholder="Your description..."></textarea>	
+		    	</form>
+		    </div>
+		    <div class="modal-footer">
+			    <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+			    <button class="btn btn-primary">Сохранить</button>
+		    </div>
+	    </div>
+	    <!-- edit modal -->
 	@else 
 		<div id="log_btns_group">
 			<h4>Что-бы добавить сайт, авторизируйтесь</h4>
@@ -102,7 +126,7 @@
                         	var sitenum = 0;                          
                         	$.each(result,function(i,item){
                         		$("#sitestbl").append("<tr>"+"<td>"+'<a href="'+item.link+'">'+item.name+"</a>"+'<p class="grey">'+item.description+"</p>"+"</td>"+"<td></td>"+"<td>"+item.date+"</td>"+'<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="'+item.id+'"></i></td>'+"</tr>");
-                            	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre><span class="label hover"><i class="icon-pencil" title="изменить"></i></span><span class="label hover"><i class="icon-remove" title="удалить"></i></span></td></tr>');
+                            	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre><span class="label hover edits" name="'+item.name+'"><i class="icon-pencil" title="изменить"></i></span>&nbsp;<span class="label hover"><i class="icon-remove" title="удалить"></i></span></td></tr>');
                             	sitenum++;
                             });
                             if (sitenum<count)  $("#get_m_sites").hide(); // прячем саму кнопку                            
@@ -125,5 +149,11 @@
 			}
 			$(str).toggle();
 		}); 
+
+		$(document).on("click", ".edits", function() {
+			var name = $(this).attr("name");
+			$('#modaledit #site_name').html(name);
+			$('#modaledit').modal();
+		});
 	</script>
 @stop
