@@ -7,7 +7,10 @@
 
 @section('content')
 	@if (isset($login))
+		<!-- текст счетчиков для js -->
+		<div id="definition"><div id="codefp">{{$code_start}}</div><div id="codesp">{{$code_end}}</div></div>
 		<div id="left-call-add">
+		<h4 class="add-sites-title">Добавить сайт</h4>
 		<form>
 			<label class="control-label" for="inputName"><strong>Название</strong></label>
 			<input name="name" id="inputName" type="text" class="span4" placeholder="Name" maxlength="60">
@@ -38,7 +41,7 @@
 		@endif
 		</div>
 		<div id="right-call-add">
-			<h4 class="add_site_title">Мои сайты</h4>
+			<h4 class="my_sites_title">Мои сайты</h4>
 			<table class="table main-table">
 			<thead>
 			<tr>
@@ -60,7 +63,13 @@
 				<td> {{ $site->date }} </td>
 				<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="{{$site->id}}"></i></td>
 			</tr>
-			<tr class="table-code id{{$site->id}}"><td colspan="4"><pre>{{$code_start}}{{$site->id}}{{$code_end}}</pre></td></tr>
+			<tr class="table-code id{{$site->id}}">
+				<td colspan="4">
+					<pre>{{$code_start}}{{$site->id}}{{$code_end}}</pre>
+					<span class="label hover"><i class="icon-pencil" title="изменить"></i></span>
+					<span class="label hover"><i class="icon-remove" title="удалить"></i></span>
+				</td>
+			</tr>
 			@endforeach
 			</tbody>
 			</table>
@@ -92,7 +101,8 @@
                         if (result != 0) {  
                         	var sitenum = 0;                          
                         	$.each(result,function(i,item){
-                        		$("#sitestbl").append("<tr>"+"<td>"+'<a href="'+item.link+'">'+item.name+"</a>"+'<p class="grey">'+item.description+"</p>"+"</td>"+"<td></td>"+"<td>"+item.date+"</td>"+"</tr>");
+                        		$("#sitestbl").append("<tr>"+"<td>"+'<a href="'+item.link+'">'+item.name+"</a>"+'<p class="grey">'+item.description+"</p>"+"</td>"+"<td></td>"+"<td>"+item.date+"</td>"+'<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="'+item.id+'"></i></td>'+"</tr>");
+                            	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre><span class="label hover"><i class="icon-pencil" title="изменить"></i></span><span class="label hover"><i class="icon-remove" title="удалить"></i></span></td></tr>');
                             	sitenum++;
                             });
                             if (sitenum<count)  $("#get_m_sites").hide(); // прячем саму кнопку                            
@@ -102,7 +112,7 @@
             );
 		});
 
-		$(".show-code").click(function(){
+		$(document).on("click", ".show-code", function(){ 
 			var id = $(this).children().attr("id");
 			var str = ".id"+id;
 			if ($(this).children().hasClass("icon-chevron-down")) {
@@ -114,6 +124,6 @@
 				$(this).children().addClass("icon-chevron-down");
 			}
 			$(str).toggle();
-		});
+		}); 
 	</script>
 @stop
