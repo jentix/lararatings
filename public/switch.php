@@ -16,5 +16,6 @@
 
 	$query = "RENAME TABLE clients TO stats,
 						   newclients TO clients";
-	mysql_query($query) or die(mysql_error());					   
+	mysql_query($query) or die(mysql_error());
+	mysql_close($link);					   
 ?>
