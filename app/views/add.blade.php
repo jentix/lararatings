@@ -123,16 +123,19 @@
                     {'count':count, 'current':current},
                     function(result) {
                         if (result != 0) {  
-                        	var sitenum = 0;                          
+                        	var sitenum = 0;
+                        	var number = 0; // кол-во записей в бд                          
                         	$.each(result,function(i,item){
                         		$("#sitestbl").append("<tr>"+"<td>"+'<a href="'+item.link+'">'+item.name+"</a>"+'<p class="grey">'+item.description+"</p>"+"</td>"+"<td></td>"+"<td>"+item.date+"</td>"+'<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="'+item.id+'"></i></td>'+"</tr>");
                             	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre><span class="label hover edits" name="'+item.name+'"><i class="icon-pencil" title="изменить"></i></span>&nbsp;<span class="label hover"><i class="icon-remove" title="удалить"></i></span></td></tr>');
-                            	sitenum++;
+                            	number = item.c;
+                            	sitenum++;                     
                             });
                             if (sitenum < count)  $("#get_m_sites").hide(); // прячем саму кнопку                                         
                         	$("#get_m_sites").attr('current', current*1+sitenum);
+                        	if (number == current*1+sitenum) $("#get_m_sites").hide();
                         }
-                        if (sitenum < count)  $("#get_m_sites").hide();
+                        else $("#get_m_sites").hide();              
                     }, 'json'
             );
 		});
