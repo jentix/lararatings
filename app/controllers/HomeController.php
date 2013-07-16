@@ -23,7 +23,7 @@ class HomeController extends BaseController {
 
 	public function showNew()
 	{	
-		$ratings = Sites::where('id', '>', 0)->orderBy('id', 'desc')->paginate(20);
+		$ratings = Sites::where('id', '>', 0)->orderBy('date', 'desc')->paginate(20);
 		foreach ($ratings as $rating) {
 			$rating->date = date("d.m.Y" , $rating->date);
 		}

@@ -81,7 +81,7 @@
 		<div id="modaledit" class="modal hide fade">
 		    <div class="modal-header">
 			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Изменение данных сайта <span id="site_name"></span></h3>
+			    <h4>Изменение данных сайта <br><span id="site_name"></span></h4>
 		    </div>
 		    <div class="modal-body">
 		    	<form>
@@ -129,9 +129,10 @@
                             	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre><span class="label hover edits" name="'+item.name+'"><i class="icon-pencil" title="изменить"></i></span>&nbsp;<span class="label hover"><i class="icon-remove" title="удалить"></i></span></td></tr>');
                             	sitenum++;
                             });
-                            if (sitenum<count)  $("#get_m_sites").hide(); // прячем саму кнопку                            
+                            if (sitenum < count)  $("#get_m_sites").hide(); // прячем саму кнопку                                         
                         	$("#get_m_sites").attr('current', current*1+sitenum);
                         }
+                        if (sitenum < count)  $("#get_m_sites").hide();
                     }, 'json'
             );
 		});
