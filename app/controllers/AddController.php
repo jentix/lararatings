@@ -6,6 +6,7 @@ class AddController extends BaseController {
 	{	
 		
 		$data = array('main_menu' => 'add');
+		$data['base'] = URL::to('/');
 
 		if (Auth::check()) {
 			$data['login'] = true;
@@ -34,7 +35,7 @@ class AddController extends BaseController {
 				}
 			}
 
-			$sites_per_page = 2; // сайтов за раз
+			$sites_per_page = 10; // сайтов за раз
 			$sites_count = Sites::where('user_id', '=', Auth::user()->id)->count();
 			// если общее кол-во больше чем за раз, то выводим кнопку показать ещё 
 			if ($sites_count > $sites_per_page) $data['get_more_site'] = $sites_per_page;

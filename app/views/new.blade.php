@@ -13,8 +13,8 @@
 				<th>#</th>
 				<th>Сайт</th>
 				<th>Просмотров в день</th>
-				<th>Просмотров вчера</th>
 				<th>Просмотров всего</th>
+				<th>Просмотров вчера</th>
 				<th>Добавлен</th>
 			</tr>
 		</thead>
@@ -29,8 +29,8 @@
 						@endif 
 					</td>
 					<td>{{$rating->views_mean}}</td>
-					<td>{{$rating->views_day}}</td>
 					<td>{{$rating->views_all}}</td>
+					<td>{{$rating->views_day}}</td>
 					<td> {{ $rating->date }} </td>
 				</tr>
 			@endforeach

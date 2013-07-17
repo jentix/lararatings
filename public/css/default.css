@@ -24,10 +24,12 @@ body {
     background-attachment: fixed;
 }
 .myspoiler {
-    width: 100%;
+    width: 650px;
     display: none;
     background-color: #ffffff;
-    border-radius: 5px;
+    margin: 0 auto 50px;
+    padding: 5px;
+    border-radius: 8px;
 }
 /* скрывает блок с объявлением переменных php в шаблоне */
 #definition {display: none;}
@@ -131,4 +133,7 @@ header h1 {
 .table-code td pre{
     color: #AF001F;
 }
-.show-code { cursor: pointer; }
+.show-code { 
+    cursor: pointer;
+    width: 30px; 
+}

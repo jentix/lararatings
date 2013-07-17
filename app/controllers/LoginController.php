@@ -10,6 +10,7 @@ class LoginController extends BaseController {
 		else {
 			
 			$data = array('main_menu' => 'empty'); // заглушка для активного меню
+			$data['base'] = URL::to('/');
 
 			if (isset($_POST['enter'])) {
 				$input = Input::all();

@@ -46,8 +46,9 @@
 			<thead>
 			<tr>
 				<th>Сайт</th>
-				<th>Просмотров</th>
+				<th>Просмотров в день</th>
 				<th>Добавлен</th>
+				<th></th>
 			</tr>
 			</thead>
 			<tbody id="sitestbl">
@@ -59,7 +60,7 @@
 						<p class="grey">{{ $site->description }}</p> 
 					@endif 
 				</td>
-				<td></td>
+				<td>{{ $site->views_mean }}</td>
 				<td> {{ $site->date }} </td>
 				<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="{{$site->id}}"></i></td>
 			</tr>

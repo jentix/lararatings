@@ -51,7 +51,7 @@ return array(
 	"not_in"           => "The selected :attribute is invalid.",
 	"numeric"          => "The :attribute must be a number.",
 	"regex"            => "The :attribute format is invalid.",
-	"required"         => "The :attribute field is required.",
+	"required"         => "Поле :attribute обязательно к заполнению.",
 	"required_if"      => "The :attribute field is required when :other is :value.",
 	"required_with"    => "The :attribute field is required when :values is present.",
 	"required_without" => "The :attribute field is required when :values is not present.",
@@ -75,7 +75,38 @@ return array(
 	|
 	*/
 
-	'custom' => array(),
+	'custom' => array(
+			'email' => array(
+				'required' => 'Пожалуйста, введите адрес электронной почты',
+				'email' => 'Некорректный адрес электронной почты',
+				'unique' => 'Данный адрес почты уже занят'
+			),
+			'psw' => array(
+				'required' => 'Пожалуйста, введите пароль',
+				'between' => 'Длинна пароля от :min до :max символов'
+			),
+			'2psw' => array(
+				'required' => 'Подтвердите пароль',
+				'between' => 'Длинна пароля от :min до :max символов',
+				'same' => 'Пароли должны совпадать'
+			),
+			'agree' => array(
+				'required' => 'Прочтите правила ресурса и подтвердите, что согласны с ними'
+			),
+			'name' => array(
+				'required' => 'Название сайта обязательно',
+				'max' => 'Длинна названия не больше :max символов',
+				'unique' => 'Сайт с таким названием уже есть!'
+			),
+			'link' => array(
+				'required' => 'Ссылка на сайт обязательна',
+				'max' => 'Длинна ссылки не больше :max символов',
+				'url' => 'Введите правильную ссылку на ресурс!'
+			),
+			'desc' => array(
+				'max' => 'Описание не более :max символов'
+			)
+		),
 
 	/*
 	|--------------------------------------------------------------------------

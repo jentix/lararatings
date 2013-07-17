@@ -9,14 +9,15 @@ class SignupController extends BaseController {
 		}
 		else {
 			$data = array('main_menu' => 'empty'); 
-
+			$data['base'] = URL::to('/');
 			$this->layout = View::make('signup')->with($data);
 		}
 	}
 	
 	public function register() {
 		$data = array('main_menu' => 'empty'); 
-
+		$data['base'] = URL::to('/');
+		
 		$input = Input::all();
 		$rules = array(
 			'email' => 'required|email|unique:users',
@@ -35,6 +36,7 @@ class SignupController extends BaseController {
 			$user = new User;
 			$user->email = $input['email'];
 			$user->password = Hash::make($input['psw']);
+			$user->mail_key = md5($input['email']);
 			$user->save();
 			Auth::login($user);
 			return Redirect::to('/');

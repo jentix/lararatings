@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="ru">
 	<head>
 		<meta charset="utf-8">
+		<title>Восстановление пароля</title>
 	</head>
 	<body>
-		<h2>Password Reset</h2>
+		<h2>Восстановление пароля</h2>
 
 		<div>
-			To reset your password, complete this form: {{ URL::to('password/reset', array($token)) }}.
+			Что-бы восстановить пароль, заполните форму, перейдя по этой ссылке:<br> {{ URL::to('password/reset', array($token)) }}.
 		</div>
 	</body>
 </html>

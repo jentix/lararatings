@@ -19,7 +19,7 @@ Route::get('logout', function(){
 
 // страница отправки письма для восстановления пароля
 Route::get('remind', function(){
-	return View::make('reminder', array('main_menu' => 'empty', 'login' => false));
+	return View::make('reminder', array('main_menu' => 'empty', 'base' => URL::to('/')));
 });
 Route::post('remind', function(){
 	$credentials = array('email' => Input::get('email'));
@@ -28,7 +28,8 @@ Route::post('remind', function(){
 // страница восстановления пароля
 Route::get('password/reset/{token}', function($token)
 {
-    return View::make('reset')->with('token', $token);
+    return View::make('reset')->with(array('token' => $token, 'main_menu' => 'empty', 'base' => URL::to('/')));
+    //'token', $token
 });
 Route::post('password/reset/{token}', function()
 {

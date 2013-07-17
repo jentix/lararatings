@@ -15,6 +15,7 @@ class HomeController extends BaseController {
 		}
 		
 		$data = array('ratings' => $ratings, 'main_menu' => 'all');
+		$data['base'] = URL::to('/');
 
 		if (Auth::check()) $data['login'] = true;
 
@@ -29,7 +30,8 @@ class HomeController extends BaseController {
 		}
 
 		$data = array('ratings' => $ratings, 'main_menu' => 'new');
-
+		$data['base'] = URL::to('/');
+		
 		if (Auth::check()) $data['login'] = true;
 
 		$this->layout = View::make('new')->with($data);
