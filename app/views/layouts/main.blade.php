@@ -5,7 +5,7 @@
 	<meta name="description" content="rating system by caddim">
 	<title>
 		@section('title') 
-		Rating Fryazino.net 
+		Rating Fryazino.net &middot;  
 		@show
 	</title>
 	
@@ -26,11 +26,11 @@
 	
 	<div class="container">
 		<header>
-			<h1>Рейтинг сайтов</h1>
+			<h1 class="lobster fbsize"><a class="h1link" href="/">Рейтинг сайтов</a> <small>beta</small></h1>
     		<div id='cssmenu'>
 			<ul>			    
 			   	@if ($main_menu == 'all') <li class='active'> @else <li> @endif
-			    <a href='/'><span>Все</span></a></li>
+			    <a href='/'><span>Главная</span></a></li>
 			    @if ($main_menu == 'new') <li class='active'> @else <li> @endif
 			    <a href='new'><span>Новые</span></a></li>
 			    @if ($main_menu == 'add') <li class='active last'> @else <li class='last'> @endif

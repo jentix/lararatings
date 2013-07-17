@@ -29,11 +29,20 @@ body {
     background-color: #ffffff;
     margin: 0 auto 50px;
     padding: 5px;
-    border-radius: 8px;
+    -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+            border-radius: 7px;
 }
 /* скрывает блок с объявлением переменных php в шаблоне */
 #definition {display: none;}
 .hover {cursor: pointer;}
+/* шрифты */
+@font-face {
+    font-family: Lobster; /* Имя шрифта */
+    src: url(fonts/LOBSTER.TTF); /* Путь к файлу со шрифтом */
+}
+.lobster {font-family: Lobster;}
+.fbsize {font-size: 32pt;}
 /* author's style */
 
 header {
@@ -47,9 +56,20 @@ header h1 {
     position: relative;
     left: 5px;
 }
-
+/* ссылка на главную */
+h1 a {
+    color: #222222;
+    text-decoration: none;
+}
+h1 a:hover {
+    color: #5E318A;
+    text-decoration: none;
+}
 .main-table {
     background-color: #ffffff;
+    -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+            border-radius: 7px;
 }
 .main-table a {
     font-size: 12pt;

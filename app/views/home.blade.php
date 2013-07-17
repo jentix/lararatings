@@ -7,6 +7,13 @@
 
 @section('content')
 	<div id="definition">{{ $i = 1 }}</div>
+	<!-- вывод сообщения о подтверждение почты -->
+	@if (isset($email_check))
+		<div class="alert">
+			{{$email_check}}
+		</div>
+	@endif
+	
 	<table class="table main-table">
 		<thead>
 			<tr>

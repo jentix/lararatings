@@ -104,7 +104,7 @@
 	    <!-- edit modal -->
 	@else 
 		<div id="log_btns_group">
-			<h4>Что-бы добавить сайт, авторизируйтесь</h4>
+			<h4>Что-бы добавить сайт, авторизуйтесь</h4>
 			<span id="log_btns">
 				<a class="btn" href="login">Войти</a>
 				<a class="btn" href="signup">Зарегистрироваться</a>
