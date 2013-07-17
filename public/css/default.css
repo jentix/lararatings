@@ -124,6 +124,7 @@ h1 a:hover {
     position: relative;
     left: 25px;
 }
+.checkbox {position: relative; left: 30px;}
 /* add page */
 #left-call-add {
     width: 350px;

@@ -12,6 +12,7 @@
 		<div id="group_email" class="control-group">
 			<label class="control-label" for="inputEmail"><strong>Электронная почта</strong></label>
 			<input name="email" id="inputEmail" type="text" class="span3" placeholder="Email" maxlength="50">
+			<br><span class="grey">мы вышлем письмо для подтверждения адреса почты</span>
 		</div>
 
 		<div id="group_psw" class="control-group">
@@ -33,7 +34,7 @@
 	</div>
 	<div class="myspoiler">
 		<h4>Регистрируясь, я соглашаюсь со следующими правилами:</h4>
-		<p>1. Электронная почта должна быть действующий.</p>
+		<p>1. Электронная почта должна быть действующий и обязательно подтвержденной.</p>
 		<p>2. Название сайта должно отражать его суть.</p>
 		<p>3. Ссылка на сайт должна быть действующий.</p>
 		<p>4. Запрещено использование нецензурной лексики.</p>

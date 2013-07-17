@@ -45,7 +45,6 @@ class SignupController extends BaseController {
 			    $message->to($maildata['email'])->subject('Добро пожаловать!');
 			});
 
-
 			// $subject = "Добро пожаловать на rating fryazino.net!";
    //          $message = "Вы успешно зарегистрировались на сайте http://rating.fryazino.net \n".
    //          "Ваш логин: ".$user->email."\n".
