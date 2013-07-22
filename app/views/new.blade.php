@@ -23,7 +23,7 @@
 				<tr>
 					<td> {{ $i; $i++; }} </td>
 					<td> 
-						<a href="{{ $rating->link }}"> {{ $rating->name }} </a>
+						<a href="{{ $rating->link }}" target="_blank"> {{ $rating->name }} </a>
 						@if ($rating->description)
 							<p class="grey">{{ $rating->description }}</p> 
 						@endif 

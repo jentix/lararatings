@@ -35,6 +35,7 @@ body {
 }
 /* скрывает блок с объявлением переменных php в шаблоне */
 #definition {display: none;}
+.hiden {display: none;}
 .hover {cursor: pointer;}
 /* шрифты */
 @font-face {
@@ -156,5 +157,24 @@ h1 a:hover {
 }
 .show-code { 
     cursor: pointer;
-    width: 30px; 
+}
+.show-code i {
+    position: relative;
+    left: 30px;
+}
+#sendmailcheck {
+    position: relative;
+    left: 80px;
+}
+#mailsendcomplite {
+    margin-top: 20px;
+}
+.edits {margin-right: 5px;}
+/* страница инфо */
+.infopagecont {
+    background-color: #fff;
+    padding: 15px;
+    -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+            border-radius: 7px;
 }

@@ -3,9 +3,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="rating system by caddim">
+
+	<meta name='yandex-verification' content='6942b7dee9ba093b' />
 	<title>
 		@section('title') 
-		Rating Fryazino.net &middot;  
+		Рейтинг Фрязино.нет &middot;  
 		@show
 	</title>
 	
@@ -36,6 +38,8 @@
 			    @if ($main_menu == 'add') <li class='active last'> @else <li class='last'> @endif
 			    <a href='add'><span>Добавить</span></a></li>
 			    @if (isset($login))
+			    @if ($main_menu == 'info') <li class='active'> @else <li> @endif
+			    <a href="info"><span>Инфо</span></a></li>
 			    <li><a href="logout"><span>Выйти</span></a></li>
 			    @endif
 			    <!-- <li class='has-sub'><a href='#'><span>Новые</span></a>
@@ -49,7 +53,7 @@
 		</header>
 		<div id="content"> 
 			@yield('content')
-		</div>
+		</div>		
 	</div>
 	@section('js') 
 	<!-- jQuery -->
@@ -57,5 +61,6 @@
 	<!-- bootstrap js -->
 	<script src="{{$base}}/js/bootstrap.min.js"></script>
 	@show
+	<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter21818110 = new Ya.Metrika({id:21818110, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/21818110" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
 </body>
 </html>

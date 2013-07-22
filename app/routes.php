@@ -44,7 +44,15 @@ Route::post('password/reset/{token}', function()
 });
 
 // сюда отправляются ajax запросы для регистрации посещений
-Route::post('touch', 'TouchController@clientTouch');
+//Route::post('touch', 'TouchController@clientTouch');
 
 //ajax controller
+// Route::post('ajax/{method}', function($method){ return 'AjaxController@'.$method; });
 Route::post('ajax/getMySites', 'AjaxController@getMySites');
+Route::post('ajax/sendNewMailAuth', 'AjaxController@sendNewMailAuth');
+Route::post('ajax/editMySite', 'AjaxController@editMySite');
+
+// страница инфо
+Route::get('info', function(){
+    return View::make('info', array('main_menu' => 'info', 'login' => true, 'base' => URL::to('/')));
+});

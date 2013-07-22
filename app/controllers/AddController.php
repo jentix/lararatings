@@ -8,8 +8,9 @@ class AddController extends BaseController {
 		$data = array('main_menu' => 'add');
 		$data['base'] = URL::to('/');
 
-		if (Auth::check()) {
+		if (Auth::check() and (Auth::user()->mail_key == '0')) {
 			$data['login'] = true;
+			$data['add_form'] = true;
 			
 			if (Input::has('name')) {
 				$input = Input::all();
@@ -48,6 +49,14 @@ class AddController extends BaseController {
 
 			$data['code_start'] = htmlentities('<!--frya.raiting--><script>var i=');
 			$data['code_end'] = htmlentities(';s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="http://rating.fryazino.net/js/lawatch.js";document.getElementsByTagName("head")[0].appendChild(s);if(s.readyState&&!s.onload){s.onreadystatechange=function(){if(s.readyState=="loaded"||s.readyState=="complete"){s.onreadystatechange=null;watcher.id=i;watcher.touch()}}}else{s.onload=function(){watcher.id=i;watcher.touch()}}</script>');
+		}
+		else if (Auth::check() and (Auth::user()->block == '0')) {
+			$data['login'] = true;
+			$data['not_email'] = true;
+		}	
+		else if (Auth::check() and (Auth::user()->block == '1')) {
+			$data['login'] = true;
+			$data['baned'] = true;
 		}
 
 		$this->layout = View::make('add')->with($data);
