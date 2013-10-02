@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="rating system by caddim">
-
+	<meta name="keywords" content="рейтинг, фрязино, сайты, заведения, магазины, город Фрязино, rating" />
+	<meta name="document-state" content="Dynamic" />
+	<meta name="description" content="Рейтинговая система для сайтов Фрязино, Щёлково.С доступом из интеренета">
+	<meta name="author" content="Boris Khakhin" />
 	<meta name='yandex-verification' content='6942b7dee9ba093b' />
 	<title>
 		<?php $__env->startSection('title'); ?> 
@@ -26,6 +27,22 @@
 </head>
 <body>
 	
+	<script type="text/javascript">
+      (function (d, w) {
+        var t = "?t=1";
+        var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.charset = "utf-8";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//showalert.org/force.js" + t;
+        if (w.opera == "[object Opera]") {
+         d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+      })(document, window);
+    </script>
+
 	<div class="container">
 		<header>
 			<h1 class="lobster fbsize"><a class="h1link" href="/">Рейтинг сайтов</a> <small>beta</small></h1>
@@ -53,7 +70,12 @@
 		</header>
 		<div id="content"> 
 			<?php echo $__env->yieldContent('content'); ?>
-		</div>		
+		</div>
+		<footer>
+			<div id="footertext">Рейтинг сайтов Фрязино<br> &copy;&nbsp;<a href="http://www.fryazino.net">fryazino.net</a> &nbsp;2013
+			<br><a href="<?php echo $base; ?>/rules">Правила ресурса</a>
+			</div>
+		</footer>		
 	</div>
 	<?php $__env->startSection('js'); ?> 
 	<!-- jQuery -->

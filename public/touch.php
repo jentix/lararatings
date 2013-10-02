@@ -1,4 +1,5 @@
 <?php
+	// скрипт которые записывает просмотры
 	header("Pragma: no-cache");
 	header("Cache-Control: private, no-cache, no-store, must-revalidate, max-age=0");
 	

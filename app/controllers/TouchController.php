@@ -1,7 +1,7 @@
 <?php
 
 class TouchController extends Controller {
-
+	// не используется, используется touch.php в папке public
 	public function clientTouch()
 	{	
 		$client           = new Clients;

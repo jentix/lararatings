@@ -3,7 +3,7 @@
 class BaseController extends Controller {
 
 	/**
-	 * Setup the layout used by the controller.
+	 * стандартный контролер в нем подружается layout для всех его наследующих.
 	 *
 	 * @return void
 	 */

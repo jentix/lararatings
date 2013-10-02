@@ -51,8 +51,12 @@ Route::post('password/reset/{token}', function()
 Route::post('ajax/getMySites', 'AjaxController@getMySites');
 Route::post('ajax/sendNewMailAuth', 'AjaxController@sendNewMailAuth');
 Route::post('ajax/editMySite', 'AjaxController@editMySite');
+Route::post('ajax/deleteMySite', 'AjaxController@deleteMySite');
+Route::post('ajax/checkMySites', 'AjaxController@checkMySites');
 
 // страница инфо
 Route::get('info', function(){
     return View::make('info', array('main_menu' => 'info', 'login' => true, 'base' => URL::to('/')));
 });
+
+Route::get('rules', 'RuleController@showRules');

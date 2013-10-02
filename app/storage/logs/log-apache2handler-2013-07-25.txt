@@ -1,0 +1,8 @@
+[2013-07-25 12:07:47] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\boris\work\localdomains\laravel\bootstrap\compiled.php:4919
+Stack trace:
+#0 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4764): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4752): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 {main} [] []

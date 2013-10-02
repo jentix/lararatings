@@ -1,0 +1,154 @@
+[2013-07-24 15:15:45] log.ERROR: exception 'ErrorException' with message 'Non-static method DOMDocument::loadXML() should not be called statically' in D:\boris\work\localdomains\laravel\public\stw_example_code.php:485
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2048, 'Non-static meth...', 'D:\boris\work\l...', 485, Array)
+#1 D:\boris\work\localdomains\laravel\public\stw_example_code.php(485): DOMDocument::loadXML()
+#2 D:\boris\work\localdomains\laravel\public\stw_example_code.php(335): _getXMLResponse('<?xml version="...')
+#3 D:\boris\work\localdomains\laravel\public\stw_example_code.php(284): _checkWebsiteThumbnailCaptured(Array)
+#4 D:\boris\work\localdomains\laravel\public\stw_example_code.php(156): _getCachedThumbnail(Array)
+#5 D:\boris\work\localdomains\laravel\public\stw_example_code.php(113): _getThumbnail('http://web.frya...', Array)
+#6 D:\boris\work\localdomains\laravel\public\stw_example_code.php(72): _getThumbnailAdvanced('http://web.frya...', Array, false, false, false, false)
+#7 D:\boris\work\localdomains\laravel\app\controllers\AddController.php(37): getThumbnailHTML('http://web.frya...')
+#8 [internal function]: AddController->showAdd()
+#9 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#10 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showAdd', Array)
+#11 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4742): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showAdd', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7811): call_user_func_array(Object(Closure), Array)
+#14 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7798): Illuminate\Routing\Route->callCallable()
+#15 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4753): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-24 15:15:45] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in D:\boris\work\localdomains\laravel\bootstrap\compiled.php:4919
+Stack trace:
+#0 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4764): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4752): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-07-24 15:26:11] log.ERROR: exception 'ErrorException' with message 'simplexml_import_dom() expects parameter 1 to be object, boolean given' in D:\boris\work\localdomains\laravel\public\stw_example_code.php:487
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'simplexml_impor...', 'D:\boris\work\l...', 487, Array)
+#1 D:\boris\work\localdomains\laravel\public\stw_example_code.php(487): simplexml_import_dom(true)
+#2 D:\boris\work\localdomains\laravel\public\stw_example_code.php(335): _getXMLResponse('<?xml version="...')
+#3 D:\boris\work\localdomains\laravel\public\stw_example_code.php(284): _checkWebsiteThumbnailCaptured(Array)
+#4 D:\boris\work\localdomains\laravel\public\stw_example_code.php(156): _getCachedThumbnail(Array)
+#5 D:\boris\work\localdomains\laravel\public\stw_example_code.php(113): _getThumbnail('http://web.frya...', Array)
+#6 D:\boris\work\localdomains\laravel\public\stw_example_code.php(72): _getThumbnailAdvanced('http://web.frya...', Array, false, false, false, false)
+#7 D:\boris\work\localdomains\laravel\app\controllers\AddController.php(37): getThumbnailHTML('http://web.frya...')
+#8 [internal function]: AddController->showAdd()
+#9 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#10 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showAdd', Array)
+#11 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4742): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showAdd', Array)
+#12 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#13 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7811): call_user_func_array(Object(Closure), Array)
+#14 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7798): Illuminate\Routing\Route->callCallable()
+#15 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4753): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-07-24 16:13:56] log.ERROR: exception 'Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'thumb' in 'field list' (SQL: insert into `sites` (`user_id`, `name`, `description`, `link`, `date`, `thumb`) values (?, ?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 1,
+  1 => 'youtube',
+  2 => 'ahahahhaha',
+  3 => 'http://www.youtube.com/',
+  4 => 1374668035,
+  5 => '<img src="58faa6059e46996cd628bb43a87f8e29.jpg"/>',
+))' in D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `si...', Array)
+#1 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `si...', Array, Object(Closure))
+#2 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `si...', Array)
+#3 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `si...', Array)
+#4 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `si...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5692): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5692): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5682): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5641): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 D:\boris\work\localdomains\laravel\app\controllers\AddController.php(36): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: AddController->showAdd()
+#13 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showAdd', Array)
+#15 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4742): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showAdd', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7811): call_user_func_array(Object(Closure), Array)
+#18 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7798): Illuminate\Routing\Route->callCallable()
+#19 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4753): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-07-24 16:26:26] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in D:\boris\work\localdomains\laravel\app\controllers\AddController.php:35
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-07-24 16:27:09] log.ERROR: exception 'ErrorException' with message 'preg_split(): Delimiter must not be alphanumeric or backslash' in D:\boris\work\localdomains\laravel\app\controllers\AddController.php:35
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'preg_split(): D...', 'D:\boris\work\l...', 35, Array)
+#1 D:\boris\work\localdomains\laravel\app\controllers\AddController.php(35): preg_split('\"\"', '<img src="58faa...', 1)
+#2 [internal function]: AddController->showAdd()
+#3 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showAdd', Array)
+#5 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4742): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showAdd', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7811): call_user_func_array(Object(Closure), Array)
+#8 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7798): Illuminate\Routing\Route->callCallable()
+#9 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4753): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2013-07-24 16:28:26] log.ERROR: exception 'ErrorException' with message 'preg_split(): No ending delimiter '&quot;' found' in D:\boris\work\localdomains\laravel\app\controllers\AddController.php:35
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(2, 'preg_split(): N...', 'D:\boris\work\l...', 35, Array)
+#1 D:\boris\work\localdomains\laravel\app\controllers\AddController.php(35): preg_split('"', '<img src="58faa...', 1)
+#2 [internal function]: AddController->showAdd()
+#3 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#4 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showAdd', Array)
+#5 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4742): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showAdd', Array)
+#6 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#7 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7811): call_user_func_array(Object(Closure), Array)
+#8 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7798): Illuminate\Routing\Route->callCallable()
+#9 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4753): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#10 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#13 {main} [] []
+[2013-07-24 16:31:17] log.ERROR: exception 'Exception' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'thumb' cannot be null (SQL: insert into `sites` (`user_id`, `name`, `description`, `link`, `date`, `thumb`) values (?, ?, ?, ?, ?, ?)) (Bindings: array (
+  0 => 1,
+  1 => 'youtube',
+  2 => 'ahahahhaha',
+  3 => 'http://www.youtube.com/',
+  4 => 1374669077,
+  5 => NULL,
+))' in D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php:502
+Stack trace:
+#0 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php(475): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'insert into `si...', Array)
+#1 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php(324): Illuminate\Database\Connection->run('insert into `si...', Array, Object(Closure))
+#2 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Connection.php(281): Illuminate\Database\Connection->statement('insert into `si...', Array)
+#3 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Query\Processors\Processor.php(30): Illuminate\Database\Connection->insert('insert into `si...', Array)
+#4 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php(1347): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `si...', Array, 'id')
+#5 [internal function]: Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(729): call_user_func_array(Array, Array)
+#7 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5692): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#8 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5692): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#9 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5682): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(5641): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 D:\boris\work\localdomains\laravel\app\controllers\AddController.php(37): Illuminate\Database\Eloquent\Model->save()
+#12 [internal function]: AddController->showAdd()
+#13 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(138): call_user_func_array(Array, Array)
+#14 D:\boris\work\localdomains\laravel\vendor\laravel\framework\src\Illuminate\Routing\Controllers\Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('showAdd', Array)
+#15 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4742): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'showAdd', Array)
+#16 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#17 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7811): call_user_func_array(Object(Closure), Array)
+#18 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(7798): Illuminate\Routing\Route->callCallable()
+#19 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(4753): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(481): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 D:\boris\work\localdomains\laravel\bootstrap\compiled.php(470): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 D:\boris\work\localdomains\laravel\public\index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []

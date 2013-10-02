@@ -12,11 +12,12 @@
 			<?php echo $email_check; ?>
 		</div>
 	<?php endif; ?>
-	
+	<div id="message_for_non_look"></div>
 	<table class="table main-table">
 		<thead>
 			<tr>
 				<th>#</th>
+				<th></th>
 				<th>Сайт</th>
 				<th>Просмотров в день</th>
 				<th>Просмотров всего</th>
@@ -27,12 +28,11 @@
 		<tbody>
 			<?php foreach ($ratings as $rating): ?>
 				<tr>
+					<td> <?php echo $i; $i++;; ?> </td>
+					<td><img src="http://www.google.com/s2/favicons?domain=<?php echo $rating->link; ?>"></td>
 					<td> 
-						<?php echo $i; $i++;; ?>
-						<img src="http://www.google.com/s2/favicons?domain=<?php echo $rating->link; ?>"> 
-					</td>
-					<td> 
-						<a href="<?php echo $rating->link; ?>" target="_blank"> <?php echo $rating->name; ?> </a>
+						<a href="<?php echo $rating->link; ?>" class="mytooltip" target="_blank"> <?php echo $rating->name; ?> <?php if ($rating->thumb != ""): ?><span><img src="http://rating.fryazino.net/thumbs/<?php echo $rating->thumb; ?>"></span> <?php endif; ?> </a>
+
 						<?php if ($rating->description): ?>
 							<p class="grey"><?php echo $rating->description; ?></p> 
 						<?php endif; ?> 
@@ -46,5 +46,26 @@
 		</tbody>
 	</table>
 	<?php echo $ratings->links();; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js'); ?>
+	@parent
+	<script src="<?php echo $base; ?>/js/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		if (!$.cookie('no_show')) {
+			$.post('/ajax/checkMySites',
+				function(result) {
+					if (result == 'show') {
+						$("#message_for_non_look").html('<div class="alert alert-error"><button type="button" class="close dont_show" data-dismiss="alert">&times;</button><strong>Внимание!</strong> У вашего сайта нет ни одного посещения, возможно вы не добавили счетчик. Пожалуйста проверьте это!</div>');
+					}
+					else $.cookie('no_show', 'yes', { expires: 2 });
+				}
+			);
+		}
+		
+		$(document).on("click", ".dont_show", function() {
+			$.cookie('no_show', 'yes', { expires: 1 });
+		});
+	</script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

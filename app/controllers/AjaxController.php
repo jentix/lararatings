@@ -1,7 +1,7 @@
 <?php
 
 class AjaxController extends Controller {
-	
+	// все аякс запросы обрабатываются тут 
 	public function getMySites() {
 		if (Request::ajax()) {
 			if (Auth::check()) {
@@ -32,11 +32,15 @@ class AjaxController extends Controller {
 		if (Request::ajax()) {
 			if (Auth::check()) {
 				$input = Input::all();
-				$rules = array(
-					'name' => 'max:60|unique:sites',
-					'link'   => 'max:100|url',
-					'desc'  => 'max:140'
-				);
+				// если изменяют чужой сайт выйти с ошибкой
+				$sites = Sites::where('user_id', '=', Auth::user()->id)->where('id', '=', $input['id'])->first();
+				if (!$sites) { $result['error'] = 'edit alien site!!!'; echo json_encode($result); exit(); }
+				// если имя сайта не изменилось не проверяем на его уникальноть  
+				if ($sites->name != $input['name'])	$rules = array('name' => 'required|max:60|unique:sites');
+					else $rules = array('name' => 'required|max:60');
+				$rules['link'] = 'required|max:100|url';
+				$rules['desc'] = 'max:140';
+				
 				$validation = Validator::make($input, $rules);
 
 				if ($validation->fails()) {
@@ -44,15 +48,40 @@ class AjaxController extends Controller {
 					$result['error'] = $messages->all();
 				}
 				else {
-					$update = Sites::where('name', '=', Input::get('site'))->firstOrFail();
-					if (Input::get('name') != '') $update->name = Input::get('name');
-					if (Input::get('link') != '') $update->link = Input::get('link');
-					if (Input::get('desc') != '') $update->description = Input::get('desc');
+					$update = Sites::where('id', '=', $input['id'])->firstOrFail();
+					$update->name = $input['name'];
+					$update->link = $input['link'];
+					$update->description = $input['desc'];
 					$update->save();
 					$result['good'] = 'edit complite';
 				}
 
 				echo json_encode($result);
+			}
+		}
+	}
+
+	public function deleteMySite() {
+		if (Request::ajax()) {
+			if (Auth::check()) {
+				$id = Input::get("id");
+				$delete = Sites::where('user_id', '=', Auth::user()->id)->where('id', '=', $id)->first();
+				
+				if ($delete) { DB::table('sites')->delete($id); echo json_encode($result = array('delete' => 'complete'));}
+				else echo json_encode($result = array('delete' => 'failed'));
+			}
+		}
+	}
+
+	public function checkMySites() {
+		if (Request::ajax()) {
+			if (Auth::check()) {
+				$sites = Sites::where('user_id', '=', Auth::user()->id)->get();
+				foreach ($sites as $site) {
+					if (($site->views_all == 0) AND ((time() - $site->date) > 108000)) {$result = "show"; break;}
+				}
+				if (isset($result)) echo $result;
+					else echo "dont_show";
 			}
 		}
 	}

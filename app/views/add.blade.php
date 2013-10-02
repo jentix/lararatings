@@ -34,11 +34,12 @@
 		@endif
 
 		@if (isset($success))
-			<div class="alert alert-success add-messages">
+			<div class="alert alert-success add-messages" id="add_complete">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 				{{$success}}
 			</div>
 		@endif
+
 		</div>
 		<div id="right-call-add">
 			<h4 class="my_sites_title">Мои сайты</h4>
@@ -68,8 +69,8 @@
 				<td colspan="4">
 					<pre>{{$code_start}}{{$site->id}}{{$code_end}}</pre>
 					разместите код счетчика на все страницы своего сайта между тегами &lt; body &gt; &lt; &frasl; body &gt;
-					<span class="label hover pull-right"><i class="icon-remove" title="удалить"></i></span>
-					<span class="label hover pull-right edits" name="{{$site->name}}"><i class="icon-pencil" title="изменить"></i></span>
+					<span class="label hover pull-right delsite" did="{{$site->id}}"><i class="icon-remove" title="удалить"></i></span>
+					<span class="label hover pull-right edits" sid="{{$site->id}}" name="{{$site->name}}" link="{{$site->link}}" desc="{{$site->description}}"><i class="icon-pencil" title="изменить"></i></span>
 				</td>
 			</tr>
 			@endforeach
@@ -91,6 +92,8 @@
 		    		<label class="control-label" for="inputName"><strong>Название</strong></label>
 					<input name="name" id="editName" type="text" class="span4" placeholder="Name" maxlength="60">
 					
+					<input name="id" id="sid" type="hidden">
+
 					<label class="control-label" for="inputLink"><strong>Ссылка на ресурс</strong></label>
 					<input name="link" id="editLink" type="text" class="span4" placeholder="Link" maxlength="80">
 					
@@ -100,7 +103,7 @@
 		    	<div id="edit_m_message"></div>
 		    </div>
 		    <div class="modal-footer">
-			    <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+			    <button class="btn" id="cancel_modal" data-dismiss="modal" aria-hidden="true">Отмена</button>
 			    <button class="btn btn-primary save_data">Сохранить</button>
 		    </div>
 	    </div>
@@ -136,8 +139,19 @@
 
 @section('js')
 	@parent
+	@if (isset($login) and isset($add_form))
+	<script src="{{$base}}/js/jscolor/jscolor.js"></script>
 	<!-- подгрузка дополнительных сайтов -->
 	<script>
+		// при успешном добавлении сайта раскрывает код счетчика сайта
+		if ($("#add_complete").size() == 1) {
+			var id = $(".show-code:first").children().attr("id");
+			var str = ".id"+id;
+			$(this).children().removeClass("icon-chevron-down");
+			$(this).children().addClass("icon-chevron-up");
+			$(str).toggle();
+		}
+		// получение сайтов по аяксу
 		$("#get_m_sites").click(function(){
 			var count = $(this).attr('count'); // сайтов за раз
 			var current = $(this).attr('current'); // текущая позиция 
@@ -149,7 +163,7 @@
                         	var number = 0; // кол-во записей в бд                          
                         	$.each(result,function(i,item){
                         		$("#sitestbl").append("<tr>"+"<td>"+'<a href="'+item.link+'">'+item.name+"</a>"+'<p class="grey">'+item.description+"</p>"+"</td>"+"<td>"+item.views_mean+"</td>"+"<td>"+item.date+"</td>"+'<td class="show-code" title="Показать код счётчика"><i class="icon-chevron-down" id="'+item.id+'"></i></td>'+"</tr>");
-                            	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre>разместите код счетчика на все страницы своего сайта между тегами &lt; body &gt; &lt; &frasl; body &gt;<span class="label hover pull-right"><i class="icon-remove" title="удалить"></i></span><span class="label hover pull-right edits" name="'+item.name+'"><i class="icon-pencil" title="изменить"></i></span>&nbsp;</td></tr>');
+                            	$("#sitestbl").append('<tr class="table-code id'+item.id+'"><td colspan="4"><pre>'+$("#codefp").html()+item.id+$("#codesp").html()+'</pre>разместите код счетчика на все страницы своего сайта между тегами &lt; body &gt; &lt; &frasl; body &gt;<span class="label hover pull-right"><i class="icon-remove" title="удалить"></i></span><span class="label hover pull-right edits" name="'+item.name+'" sid="'+item.id+'" link="'+item.link+'" desc="'+item.description+'"><i class="icon-pencil" title="изменить"></i></span>&nbsp;</td></tr>');
                             	number = item.c;
                             	sitenum++;                     
                             });
@@ -161,8 +175,8 @@
                     }, 'json'
             );
 		});
-
-		$(document).on("click", ".show-code", function(){ 
+		// Показать код и доп. настройки
+		$(document).on("click", ".show-code", function() { 
 			var id = $(this).children().attr("id");
 			var str = ".id"+id;
 			if ($(this).children().hasClass("icon-chevron-down")) {
@@ -176,33 +190,50 @@
 			$(str).toggle();
 		}); 
 
+		// изменение данных
 		$(document).on("click", ".edits", function() {
 			var name = $(this).attr("name");
 			$('#modaledit #site_name').html(name);
-			$("#editName").val();
-			$("#editLink").val();
-			$("#editDesc").val();
+			$("#editName").val(name);
+			$("#sid").val($(this).attr("sid"));
+			$("#editLink").val($(this).attr("link"));
+			$("#editDesc").val($(this).attr("desc"));
 			$('#modaledit').modal();
 		});
-
-		$(document).on("click", ".save_data", function(){
-			var site = $("#modaledit #site_name").html();
+		// сохранить изменения
+		$(document).on("click", ".save_data", function() {
 			var name = $("#editName").val();
+			var id = $("#sid").val();
 			var link = $("#editLink").val();
 			var desc = $("#editDesc").val();
 			// alert(site+"_"+name+"_"+link+"_"+desc);
 			$.post('/ajax/editMySite',
-					{'site':site, 'name':name, 'link':link, 'desc':desc},
+					{ 'name':name, 'id':id, 'link':link, 'desc':desc },
 					function(result) {
 						if (result.error) $("#edit_m_message").html('<div class="alert alert-error">'+result.error+'</div>');
-						if (result.good) {$('#modaledit').modal('hide');}
+						if (result.good) {$('#modaledit').modal('hide'); location.reload();}
 					}, 'json'
 			);
 		});
+		$(document).on("click", "#cancel_modal", function() {
+			$("#edit_m_message").html("");
+		});
+		$(document).on("click", ".delsite", function() {
+			var id = $(this).attr("did");
+			if (confirm("Вы действительно хотите удалить сайт ?"))
+				$.post('/ajax/deleteMySite',
+						{ 'id':id },
+						function(result) {
+							if (result.delete = 'complete') {location.reload();}
+						}, 'json'
+				);	
+		});
 	</script>
+	@endif
+
 	@if (isset($not_email))
 	<script>
-		$("#sendmailcheck").click(function(){
+		$("#sendmailcheck").click(function() {
 			$.post('/ajax/sendNewMailAuth',
 					{'sendme':'newauthmail'},
 					function(result) {

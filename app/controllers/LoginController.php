@@ -18,20 +18,20 @@ class LoginController extends BaseController {
 				// запомнить ли пользователя ?
 				if (isset($input['remember'])) $remember = true;
 					else $remember = false;
-
+				// правила валидации
 				$rules = array(
 				    'email' => 'required|email',
 				    'psw'  => 'required|between:5,40'
 				);
 				$validation = Validator::make($input, $rules);
-
+				// если не прошел валидацию
 				if ($validation->fails()) {
 					$messages = $validation->messages();
 					$data['messages'] = $messages->all();
 					$this->layout = View::make('login')->with($data);
 				}
 				else {
-					
+					// сли прошел пытаемся войти
 					if (Auth::attempt(array('email' => $input['email'], 'password' => $input['psw']), $remember)) {
 					    return Redirect::to('/'); // если зашел
 					}

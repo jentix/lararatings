@@ -1,6 +1,7 @@
 <?php
+	// обновление статистики по крону 
 	set_time_limit (0);
-	$link = mysql_connect('root', '', '') or die("Could not connect: " . mysql_error());
+	$link = mysql_connect('localhost', 'root', '') or die("Could not connect: " . mysql_error());
 	mysql_select_db('db_rating') or die(mysql_error());
 
 	$query = "CREATE TABLE IF NOT EXISTS `newclients` (
