@@ -32,7 +32,7 @@ class AddController extends BaseController {
 					$newsite->link        = Input::get('link');
 					$newsite->date        = time();
 					$newsite->save();
-					$data['success'] = 'Сайт успешно добавлен';
+					$data['success'] = 'Сайт успешно добавлен';						       
 				}
 			}
 

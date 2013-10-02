@@ -18,6 +18,7 @@
 		<thead>
 			<tr>
 				<th>#</th>
+				<th></th>
 				<th>Сайт</th>
 				<th>Просмотров в день</th>
 				<th>Просмотров всего</th>
@@ -29,6 +30,7 @@
 			@foreach ($ratings as $rating)
 				<tr>
 					<td> {{ $i; $i++; }} </td>
+					<td><img src="http://www.google.com/s2/favicons?domain={{ $rating->link }}"></td>
 					<td> 
 						<a href="{{ $rating->link }}" target="_blank"> {{ $rating->name }} </a>
 						@if ($rating->description)

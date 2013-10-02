@@ -1,0 +1,41 @@
+
+<?php $__env->startSection('title'); ?>
+	@parent
+	Новые сайты
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	<div id="definition"><?php echo $i = 1; ?></div>
+	<table class="table main-table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Сайт</th>
+				<th>Просмотров в день</th>
+				<th>Просмотров всего</th>
+				<th>Просмотров вчера</th>
+				<th>Добавлен</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach ($ratings as $rating): ?>
+				<tr>
+					<td> <?php echo $i; $i++;; ?> </td>
+					<td> 
+						<a href="<?php echo $rating->link; ?>" target="_blank"> <?php echo $rating->name; ?> </a>
+						<?php if ($rating->description): ?>
+							<p class="grey"><?php echo $rating->description; ?></p> 
+						<?php endif; ?> 
+					</td>
+					<td><?php echo $rating->views_mean; ?></td>
+					<td><?php echo $rating->views_all; ?></td>
+					<td><?php echo $rating->views_day; ?></td>
+					<td> <?php echo $rating->date; ?> </td>
+				</tr>
+			<?php endforeach; ?>
+		</tbody>
+	</table>
+	<?php echo $ratings->links();; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

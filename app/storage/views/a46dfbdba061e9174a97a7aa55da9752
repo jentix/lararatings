@@ -1,0 +1,43 @@
+
+<?php $__env->startSection('title'); ?>
+	@parent
+	Вход
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	<form class="form-horizontal login-form" method="post">
+		<h3>Вход на сайт</h3>
+    	<div class="control-group">
+	   		<label class="control-label" for="inputEmail"><strong>Почта</strong></label>
+		    <div class="controls">
+		    	<input type="text" id="inputEmail" name="email" placeholder="Email" maxlength="50">
+	    	</div>
+    	</div>
+	    <div class="control-group">
+		    <label class="control-label" for="inputPassword"><strong>Пароль</strong></label>
+		    <div class="controls">
+		    	<input type="password" id="inputPassword" name="psw" placeholder="Password">
+		    </div>
+	    </div>
+	    <div class="control-group">
+		    <div class="controls">
+		    <label class="checkbox">
+		   		<input type="checkbox" name="remember"> Запомнить меня
+		    </label>
+	   	 	</div>
+	    </div>
+	    <div class="login-btns"> 
+		    <button type="submit" name="enter" class="btn btn-success">Войти</button>
+		    <a class="btn btn-warning" href="remind">Восстановить пароль</a>
+		</div>
+    </form>
+    <?php if (isset($messages)): ?>
+    	<div class="alert alert-error login-errors">
+    		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		    <?php foreach ($messages as $message): ?>
+		    	<p><?php echo $message; ?></p>
+		    <?php endforeach; ?>
+		</div>
+	<?php endif; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
